@@ -100,7 +100,8 @@
 
                                     <button type="submit" class="search-btn">
                                         <i class="bi bi-search"></i>
-                                        <span>Trouver un logement</span>
+                                        <span><a href="{{ route('maison') }}" class="text-light">Trouver un logement</a>
+                                        </span>
 
                                     </button>
                                 </form>
@@ -157,7 +158,7 @@
                                             class="img-fluid">
                                     </div>
                                 </div>
-
+<br>
                                 <div class="agent-card">
                                     <div class="agent-profile">
                                         <img src="{{ asset('images/image_3.webp') }}" alt="House" class="agent-photo">
@@ -174,6 +175,58 @@
                                                     <i class="bi bi-star-fill"></i>
                                                 </div>
                                                 <span class="rating-text">5.0 (94 reviews)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="contact-agent-btn">
+                                        <i class="bi bi-chat-dots"></i>
+                                    </button>
+                                </div>
+
+                                <!-- le 2eme argent -->
+
+                                <div class="agent-card">
+                                    <div class="agent-profile">
+                                        <img src="{{ asset('images/image_3.webp') }}" alt="House" class="agent-photo">
+                                        <div class="agent-info">
+                                            <h4>TOMETIN Fréjus</h4>
+                                            <p>Conseiller immobilier senior</p>
+
+                                            <div class="agent-rating">
+                                                <div class="stars">
+                                                    <i class="bi bi-star-fill"></i>
+                                                    <i class="bi bi-star-fill"></i>
+                                                    <i class="bi bi-star-fill"></i>
+                                                    <i class="bi bi-star-fill"></i>
+                                                    <i class="bi bi-star-fill"></i>
+                                                </div>
+                                                <span class="rating-text">5.0 (97 reviews)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="contact-agent-btn">
+                                        <i class="bi bi-chat-dots"></i>
+                                    </button>
+                                </div>
+
+                                <!-- le 3eme argent -->
+
+                                <div class="agent-card">
+                                    <div class="agent-profile">
+                                        <img src="{{ asset('images/image_3.webp') }}" alt="House" class="agent-photo">
+                                        <div class="agent-info">
+                                            <h4>TOMETIN Fréjus</h4>
+                                            <p>Conseiller immobilier senior</p>
+
+                                            <div class="agent-rating">
+                                                <div class="stars">
+                                                    <i class="bi bi-star-fill"></i>
+                                                    <i class="bi bi-star-fill"></i>
+                                                    <i class="bi bi-star-fill"></i>
+                                                    <i class="bi bi-star-fill"></i>
+                                                    <i class="bi bi-star-fill"></i>
+                                                </div>
+                                                <span class="rating-text">5.0 (97 reviews)</span>
                                             </div>
                                         </div>
                                     </div>

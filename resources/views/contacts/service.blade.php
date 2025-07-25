@@ -135,8 +135,8 @@
                 <h3>Ready to Make Your Move?</h3>
                 <p>Connect with our experienced team today and discover how we can help you achieve your real estate goals.</p>
                 <div class="cta-buttons">
-                  <a href="contact.html" class="btn-primary">Contact Us Today</a>
-                  <a href="tel:+1234567890" class="btn-secondary">
+                  <a href="{{ route('contact') }}" class="btn-primary">Contact Us Today</a>
+                  <a href="tel:+2290153947056" class="btn-secondary">
                     <i class="bi bi-telephone"></i> Call Now
                   </a>
                 </div>

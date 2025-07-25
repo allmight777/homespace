@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\LogementController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MaisonController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 // La page welcome
@@ -25,8 +25,10 @@ Route::get('/services', function () {
 Route::get('/terms', function () {
     return view('contacts.terms');
 })->name('terms');
-//La route pour les proprietes
+// La route pour les proprietes
 Route::get('/logements', [MaisonController::class, 'index'])->name('maison');
+// show details
+Route::get('/logements/{id}', [MaisonController::class, 'show'])->name('logements.show');
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
