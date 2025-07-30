@@ -65,7 +65,10 @@ class LogementController extends Controller
         }
         $validated['photos'] = json_encode($photosPaths);
 
-        Logement::create($validated);
+        $validated['charges'] = $validated['charges'] ?? 0;
+
+Logement::create($validated);
+
 
         return redirect()->route('admin.logements.index')->with('success', 'Logement ajouté avec succès');
     }

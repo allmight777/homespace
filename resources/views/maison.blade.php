@@ -141,7 +141,18 @@
                                             <div class="property-price">${{ number_format($logement->prix, 2) }}</div>
                                             <div class="property-type">{{ $logement->type }}</div>
                                         </div>
+                                        <div
+                                            class="bg-light border-start border-4 border-primary rounded p-3 shadow-sm mb-3">
+                                            <h5 class="mb-0 text-danger fw-bold">
+                                                🏠 ID de l'appartement :
+                                                <span class="badge bg-danger text-white ms-2 px-3 py-2">
+                                                    {{ $logement->id }}
+                                                </span>
+                                            </h5>
+                                        </div>
+
                                         <h4 class="property-title">{{ $logement->nom }}</h4>
+
                                         <p class="property-address">
                                             <i class="bi bi-geo-alt"></i> {{ $logement->localisation }}
                                         </p>
@@ -159,11 +170,7 @@
                                                 <span>{{ $logement->wifi_inclus ? 'WiFi Inclus' : 'Pas de WiFi' }}</span>
                                             </div>
                                         </div>
-                                        <div class="agent-contact mt-3">
-                                            <a href="tel:{{ $logement->contact_tel }}" class="contact-btn">
-                                                <i class="bi bi-telephone"></i> {{ $logement->contact_tel }}
-                                            </a>
-                                        </div>
+                                       
                                         <br>
                                         <a href="{{ route('logements.show', $logement->id) }}"
                                             class="btn btn-success w-100 rounded py-2 text-white">

@@ -89,11 +89,17 @@
                                         une demande.
                                     </li>
                                     <li class="list-group-item">
-                                        🕒 Après paiement, vous serez redirigé vers votre espace <strong>“Mes
+                                        🕒 Après paiement, accédez à <strong>“Mes
                                             demandes”</strong> pour suivre l’évolution.
+                                        <a href="{{ route('mes.paiements') }}" class="category bg-primary">
+
+                                            <small>Cliquez pour suivre </small>
+
+                                        </a>
                                     </li>
                                     <li class="list-group-item">
-                                        📅 Une fois votre demande traitée, un <strong>rendez-vous</strong> vous sera proposé par email ou whatsApp
+                                        📅 Une fois votre demande traitée, un <strong>rendez-vous</strong> vous sera proposé
+                                        par email ou whatsApp
                                         pour finaliser la location.
                                     </li>
                                     <li class="list-group-item">
@@ -207,10 +213,11 @@
 
                                 <!-- section pour voir mes demande -->
 
-                                   <article class="tab-post">
+                                <article class="tab-post">
                                     <div class="row g-0 align-items-center">
                                         <div class="col-4">
-                                            <img src="{{ asset('images/image_18.webp') }}" alt="Post" class="img-fluid">
+                                            <img src="{{ asset('images/image_18.webp') }}" alt="Post"
+                                                class="img-fluid">
                                         </div>
                                         <div class="col-8">
                                             <div class="post-content">
@@ -219,11 +226,11 @@
                                                         Suivre mes demandes lancées
                                                     </a>
                                                 </h4>
-                                                <span class="category">Mes demandes</span>
+                                                <span class="category">Demandes</span>
 
-                                                <a href="{{ route('paiement.lancer') }}"
-                                                    class="category bg-danger mt-2 d-inline-block px-2 py-1 text-white rounded">
-                                                    <small>Cliquez pour voir</small>
+                                                <a href="{{ route('mes.paiements') }}"
+                                                    class="category bg-primary mt-2 d-inline-block px-2 py-1 text-white rounded">
+                                                    <small>Cliquez pour suivre</small>
                                                 </a>
                                             </div>
                                         </div>
@@ -237,19 +244,49 @@
                             <!-- Trending News Tab -->
                             <div class="tab-pane fade" id="trending">
 
-
                                 <article class="tab-post">
                                     <div class="row g-0 align-items-center">
                                         <div class="col-4">
-                                            <img src="assets/img/blog/blog-post-square-8.webp" alt="Post"
+                                            <img src="{{ asset('images/image_17.webp') }}" alt="Post"
                                                 class="img-fluid">
                                         </div>
                                         <div class="col-8">
                                             <div class="post-content">
-                                                <span class="category">Leadership</span>
-                                                <h4 class="post-title"><a href="#">Building High-Performance Teams
-                                                        in Dynamic Environments</a></h4>
-                                                <div class="post-author">by <a href="#">Nathan Brooks</a></div>
+                                                <h4 class="post-title">
+                                                    <a href="{{ route('paiement.lancer') }}">
+                                                        Réservez votre chambre en effectuant le paiement maintenant
+                                                    </a>
+                                                </h4>
+                                                <span class="category">Paiement</span>
+
+                                                <a href="{{ route('paiement.lancer') }}"
+                                                    class="category bg-danger mt-2 d-inline-block px-2 py-1 text-white rounded">
+                                                    <small>Cliquez pour payer</small>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="tab-post">
+                                    <div class="row g-0 align-items-center">
+                                        <div class="col-4">
+                                            <img src="{{ asset('images/image_18.webp') }}" alt="Post"
+                                                class="img-fluid">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="post-content">
+                                                <h4 class="post-title">
+                                                    <a href="{{ route('paiement.lancer') }}">
+                                                        Suivre mes demandes lancées
+                                                    </a>
+                                                </h4>
+                                                <span class="category">Demandes</span>
+
+                                                <a href="{{ route('mes.paiements') }}"
+                                                    class="category bg-primary mt-2 d-inline-block px-2 py-1 text-white rounded">
+                                                    <small>Cliquez pour suivre</small>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -287,74 +324,74 @@
     <!-- Blog Posts Section -->
     <section id="blog-posts" class="blog-posts section">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-  <div class="row gy-4">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="row gy-4">
 
-    <!-- Paiement sécurisé -->
-    <div class="col-lg-4 text-center">
-      <article>
-        <div class="post-icon mb-3">
-          <i class="bi bi-shield-lock" style="font-size: 4rem; color: #0d6efd;"></i>
+                <!-- Paiement sécurisé -->
+                <div class="col-lg-4 text-center">
+                    <article>
+                        <div class="post-icon mb-3">
+                            <i class="bi bi-shield-lock" style="font-size: 4rem; color: #0d6efd;"></i>
+                        </div>
+
+                        <p class="post-category">Paiement</p>
+
+                        <h2 class="title">
+                            <a href="{{ route('paiement.lancer') }}">Paiement sécurisé et fiable</a>
+                        </h2>
+
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="post-meta">
+                                <p class="post-author">Votre sécurité</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Suivi en temps réel -->
+                <div class="col-lg-4 text-center">
+                    <article>
+                        <div class="post-icon mb-3">
+                            <i class="bi bi-clock-history" style="font-size: 4rem; color: #0d6efd;"></i>
+                        </div>
+
+                        <p class="post-category">Suivi</p>
+
+                        <h2 class="title">
+                            <a href="#">Suivi en temps réel de vos demandes</a>
+                        </h2>
+
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="post-meta">
+                                <p class="post-author">Toujours informé</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Communication avec agents -->
+                <div class="col-lg-4 text-center">
+                    <article>
+                        <div class="post-icon mb-3">
+                            <i class="bi bi-people" style="font-size: 4rem; color: #0d6efd;"></i>
+                        </div>
+
+                        <p class="post-category">Communication</p>
+
+                        <h2 class="title">
+                            <a href="{{ route('agent') }}">Communication directe avec nos agents</a>
+                        </h2>
+
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="post-meta">
+                                <p class="post-author">À votre écoute</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
         </div>
-
-        <p class="post-category">Paiement</p>
-
-        <h2 class="title">
-          <a href="{{ route('paiement.lancer') }}">Paiement sécurisé et fiable</a>
-        </h2>
-
-        <div class="d-flex justify-content-center align-items-center">
-          <div class="post-meta">
-            <p class="post-author">Votre sécurité</p>
-          </div>
-        </div>
-      </article>
-    </div>
-
-    <!-- Suivi en temps réel -->
-    <div class="col-lg-4 text-center">
-      <article>
-        <div class="post-icon mb-3">
-          <i class="bi bi-clock-history" style="font-size: 4rem; color: #0d6efd;"></i>
-        </div>
-
-        <p class="post-category">Suivi</p>
-
-        <h2 class="title">
-          <a href="#">Suivi en temps réel de vos demandes</a>
-        </h2>
-
-        <div class="d-flex justify-content-center align-items-center">
-          <div class="post-meta">
-            <p class="post-author">Toujours informé</p>
-          </div>
-        </div>
-      </article>
-    </div>
-
-    <!-- Communication avec agents -->
-    <div class="col-lg-4 text-center">
-      <article>
-        <div class="post-icon mb-3">
-          <i class="bi bi-people" style="font-size: 4rem; color: #0d6efd;"></i>
-        </div>
-
-        <p class="post-category">Communication</p>
-
-        <h2 class="title">
-          <a href="{{ route('agent') }}">Communication directe avec nos agents</a>
-        </h2>
-
-        <div class="d-flex justify-content-center align-items-center">
-          <div class="post-meta">
-            <p class="post-author">À votre écoute</p>
-          </div>
-        </div>
-      </article>
-    </div>
-
-  </div>
-</div>
 
 
     </section><!-- /Blog Posts Section -->

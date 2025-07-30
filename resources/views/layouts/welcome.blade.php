@@ -90,27 +90,22 @@
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a href="{{ route('welcome') }}" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="{{ route('maison') }}">Properties</a></li>
+                    <li><a href="{{ route('maison') }}">Appartements</a></li>
                     <li><a href="{{ route('service') }}">Services</a></li>
                     <li><a href="{{ route('agent') }}">Agents</a></li>
-                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="{{ route('login') }}">Connexion</a></li>
                     <li><a href="{{ route('register') }}">Inscription</a></li>
                     <li class="dropdown"><a href="#"><span>More Pages</span> <i
                                 class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
-                            <li><a href="property-details.html">Property Details</a></li>
-                            <li><a href="service-details.html">Service Details</a></li>
-                            <li><a href="agent-profile.html">Agent Profile</a></li>
+
                             <li><a href="{{ route('terms') }}">Terms</a></li>
-                            <li><a href="privacy.html">Privacy</a></li>
-                            <li><a href="404.html">404</a></li>
+                            <li><a href="{{ route('privacy') }}">Privacy</a></li>
+                            <li><a href="{{ route('abouts') }}">About</a></li>
                         </ul>
                     </li>
                     <li><a href="{{ route('contact') }}">Contact</a></li>
-
-    <li>
+                    {{--   <li>
                         <form method="POST" action="{{ route('logout') }}" style="display: inline;">
                             @csrf
                             <button type="submit" class="btn btn-danger btn-sm"
@@ -118,7 +113,7 @@
                                 Logout
                             </button>
                         </form>
-                    </li>
+                    </li>  --}}
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
@@ -161,7 +156,7 @@
                         <li><a href="{{ route('contact') }}">About us</a></li>
                         <li><a href="{{ route('service') }}">Services</a></li>
                         <li><a href="{{ route('terms') }}">Terms of service</a></li>
-                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="{{ route('privacy') }}">Privacy policy</a></li>
                     </ul>
                 </div>
 
@@ -170,19 +165,17 @@
                     <ul>
                         <li><a href="{{ route('login') }}">Connexion</a></li>
                         <li><a href="{{ route('register') }}">Inscription</a></li>
-                        <li><a href="#">Product Management</a></li>
-                        <li><a href="#">Marketing</a></li>
-                        <li><a href="#">Graphic Design</a></li>
+
                     </ul>
                 </div>
 
                 <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
                     <h4>Contact Us</h4>
-                    <p>A108 Adam Street</p>
-                    <p>New York, NY 535022</p>
-                    <p>United States</p>
-                    <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-                    <p><strong>Email:</strong> <span>info@example.com</span></p>
+                 
+                    <p>Cadjehoun, Gbegamey</p>
+                    <p>Bénin</p>
+                    <p class="mt-4"><strong>Phone:</strong> <span>+229 01 94849958</span></p>
+                    <p><strong>Email:</strong> <span>agoliganange15@gmail.com</span></p>
                 </div>
 
             </div>

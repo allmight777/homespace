@@ -60,8 +60,8 @@
                         </div>
                         <div class="info-content">
                             <h5 class="mb-2">Appeler maintenant 2</h5>
-                            <a href="tel:+2290153947056" class="btn btn-outline-success btn-sm text-dark">
-                                📞 +229 01 53 94 70 56
+                            <a href="tel:+2290147877811" class="btn btn-outline-success btn-sm text-dark">
+                                📞 +229 01 47 87 78 11
                             </a>
                         </div>
                     </div>
@@ -90,8 +90,8 @@
                         </div>
                         <div class="info-content">
                             <h5 class="mb-2">Envoyer un mail 2</h5>
-                            <a href="mailto:agoliganange15@gmail.com" class="btn btn-outline-success btn-sm text-dark">
-                                ✉️ agoliganange15@gmail.com
+                            <a href="mailto:noelfassinou53@gmail.com" class="btn btn-outline-success btn-sm text-dark">
+                                ✉️ noelfassinou53@gmail.com
                             </a>
                         </div>
                     </div>
@@ -141,7 +141,7 @@
                                 </div>
 
                                 <div class="col-12 text-center">
-                                    <button type="submit" class="btn-submit">SEND MESSAGE</button>
+                                    <button type="submit" class="btn-submit" disabled>SEND MESSAGE</button>
                                 </div>
                             </div>
                         </form>

@@ -2,155 +2,164 @@
 
 @section('content')
 
-    <!-- Page Title -->
+    <!-- Titre de la page -->
     <div class="page-title light-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Terms</h1>
+        <h1 class="mb-2 mb-lg-0">Conditions Générales</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="{{ route('welcome') }}">Home</a></li>
-            <li class="current">Terms</li>
+            <li><a href="{{ route('welcome') }}">Accueil</a></li>
+            <li class="current">Conditions</li>
           </ol>
         </nav>
       </div>
-    </div><!-- End Page Title -->
+    </div><!-- Fin Titre de la page -->
 
-    <!-- Terms Of Service Section -->
+    <!-- Section Conditions Générales -->
     <section id="terms-of-service" class="terms-of-service section">
 
       <div class="container" data-aos="fade-up">
-        <!-- Page Header -->
+        <!-- En-tête de la page -->
         <div class="tos-header text-center" data-aos="fade-up">
-          <span class="last-updated">Last Updated: February 27, 2025</span>
-          <h2>Terms of Service</h2>
-          <p>Please read these terms of service carefully before using our services</p>
+          <span class="last-updated">Dernière mise à jour : 27 février 2025</span>
+          <h2>Conditions Générales d’Utilisation</h2>
+          <p>Merci de lire attentivement ces conditions avant d’utiliser nos services.</p>
         </div>
 
-        <!-- Content -->
+        <!-- Contenu -->
         <div class="tos-content" data-aos="fade-up" data-aos-delay="200">
-          <!-- Agreement Section -->
+          <!-- Accord -->
           <div id="agreement" class="content-section">
-            <h3>1. Agreement to Terms</h3>
-            <p>By accessing our website and services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing our services.</p>
+            <h3>1. Accord</h3>
+            <p>En accédant à notre site web et à nos services, vous acceptez d’être lié par ces Conditions Générales ainsi que par toutes les lois et réglementations applicables. Si vous n’acceptez pas ces conditions, vous n’êtes pas autorisé à utiliser nos services.</p>
             <div class="info-box">
               <i class="bi bi-info-circle"></i>
-              <p>These terms apply to all users, visitors, and others who access or use our services.</p>
+              <p>Ces conditions s’appliquent à tous les utilisateurs, visiteurs et toute autre personne utilisant nos services.</p>
             </div>
           </div>
 
-          <!-- Intellectual Property -->
+          <!-- Propriété intellectuelle -->
           <div id="intellectual-property" class="content-section">
-            <h3>2. Intellectual Property Rights</h3>
-            <p>Our service and its original content, features, and functionality are owned by us and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+            <h3>2. Droits de propriété intellectuelle</h3>
+            <p>Nos services ainsi que leur contenu original, fonctionnalités et caractéristiques nous appartiennent et sont protégés par les lois internationales relatives au droit d’auteur, marques, brevets et secrets commerciaux.</p>
             <ul class="list-items">
-              <li>All content is our exclusive property</li>
-              <li>You may not copy or modify the content</li>
-              <li>Our trademarks may not be used without permission</li>
-              <li>Content is for personal, non-commercial use only</li>
+              <li>Tous les contenus sont notre propriété exclusive</li>
+              <li>Il est interdit de copier ou modifier le contenu</li>
+              <li>Nos marques ne peuvent être utilisées sans autorisation</li>
+              <li>Le contenu est destiné à un usage personnel et non commercial</li>
             </ul>
           </div>
 
-          <!-- User Accounts -->
+          <!-- Comptes utilisateurs -->
           <div id="user-accounts" class="content-section">
-            <h3>3. User Accounts</h3>
-            <p>When you create an account with us, you must provide accurate, complete, and current information. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account.</p>
+            <h3>3. Comptes utilisateurs</h3>
+            <p>Lorsque vous créez un compte chez nous, vous devez fournir des informations exactes, complètes et à jour. Tout manquement constitue une violation des présentes conditions, pouvant entraîner la suspension immédiate de votre compte.</p>
             <div class="alert-box">
               <i class="bi bi-exclamation-triangle"></i>
               <div class="alert-content">
-                <h5>Important Notice</h5>
-                <p>You are responsible for safeguarding the password and for all activities that occur under your account.</p>
+                <h5>Attention importante</h5>
+                <p>Vous êtes responsable de la confidentialité de votre mot de passe et de toutes les activités réalisées via votre compte.</p>
               </div>
             </div>
           </div>
 
-          <!-- Prohibited Activities -->
+          <!-- Activités interdites -->
           <div id="prohibited" class="content-section">
-            <h3>4. Prohibited Activities</h3>
-            <p>You may not access or use the Service for any purpose other than that for which we make it available.</p>
+            <h3>4. Activités interdites</h3>
+            <p>Vous ne devez pas accéder ou utiliser le service pour un usage autre que celui auquel il est destiné.</p>
             <div class="prohibited-list">
               <div class="prohibited-item">
                 <i class="bi bi-x-circle"></i>
-                <span>Systematic retrieval of data or content</span>
+                <span>Extraction systématique de données ou contenus</span>
               </div>
               <div class="prohibited-item">
                 <i class="bi bi-x-circle"></i>
-                <span>Publishing malicious content</span>
+                <span>Publication de contenus malveillants</span>
               </div>
               <div class="prohibited-item">
                 <i class="bi bi-x-circle"></i>
-                <span>Engaging in unauthorized framing</span>
+                <span>Utilisation non autorisée de cadres (framing)</span>
               </div>
               <div class="prohibited-item">
                 <i class="bi bi-x-circle"></i>
-                <span>Attempting to gain unauthorized access</span>
+                <span>Tentatives d’accès non autorisé</span>
               </div>
             </div>
           </div>
 
-          <!-- Disclaimers -->
+          <!-- Exclusions de garantie -->
           <div id="disclaimer" class="content-section">
-            <h3>5. Disclaimers</h3>
-            <p>Your use of our service is at your sole risk. The service is provided "AS IS" and "AS AVAILABLE" without warranties of any kind, whether express or implied.</p>
+            <h3>5. Exclusions de garantie</h3>
+            <p>L’utilisation de nos services se fait à vos propres risques. Les services sont fournis « tels quels » et « selon disponibilité » sans aucune garantie expresse ou implicite.</p>
             <div class="disclaimer-box">
-              <p>We do not guarantee that:</p>
+              <p>Nous ne garantissons pas :</p>
               <ul>
-                <li>The service will meet your requirements</li>
-                <li>The service will be uninterrupted or error-free</li>
-                <li>Results from using the service will be accurate</li>
-                <li>Any errors will be corrected</li>
+                <li>Que le service réponde à vos attentes</li>
+                <li>Que le service soit ininterrompu ou sans erreur</li>
+                <li>Que les résultats obtenus seront exacts</li>
+                <li>La correction des éventuelles erreurs</li>
               </ul>
             </div>
           </div>
 
-          <!-- Limitation of Liability -->
+          <!-- Limitation de responsabilité -->
           <div id="limitation" class="content-section">
-            <h3>6. Limitation of Liability</h3>
-            <p>In no event shall we be liable for any indirect, punitive, incidental, special, consequential, or exemplary damages arising out of or in connection with your use of the service.</p>
+            <h3>6. Limitation de responsabilité</h3>
+            <p>En aucun cas nous ne saurons responsables des dommages indirects, punitifs, accessoires, spéciaux ou consécutifs liés à l’utilisation des services.</p>
           </div>
 
-          <!-- Indemnification -->
+          <!-- Indemnisation -->
           <div id="indemnification" class="content-section">
-            <h3>7. Indemnification</h3>
-            <p>You agree to defend, indemnify, and hold us harmless from and against any claims, liabilities, damages, losses, and expenses arising out of your use of the service.</p>
+            <h3>7. Indemnisation</h3>
+            <p>Vous acceptez d’indemniser et de défendre notre société contre toute réclamation, responsabilité, dommage, perte ou dépense découlant de votre utilisation des services.</p>
           </div>
 
-          <!-- Termination -->
+          <!-- Résiliation -->
           <div id="termination" class="content-section">
-            <h3>8. Termination</h3>
-            <p>We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.</p>
+            <h3>8. Résiliation</h3>
+            <p>Nous pouvons résilier ou suspendre votre compte immédiatement, sans préavis ni responsabilité, en cas de violation des présentes conditions ou pour toute autre raison.</p>
           </div>
 
-          <!-- Governing Law -->
+          <!-- Droit applicable -->
           <div id="governing-law" class="content-section">
-            <h3>9. Governing Law</h3>
-            <p>These Terms shall be governed by and construed in accordance with the laws of [Your Country], without regard to its conflict of law provisions.</p>
+            <h3>9. Droit applicable</h3>
+            <p>Ces conditions sont régies par les lois de [Votre Pays], sans tenir compte de leurs principes de conflits de lois.</p>
           </div>
 
-          <!-- Changes -->
+          <!-- Modifications -->
           <div id="changes" class="content-section">
-            <h3>10. Changes to Terms</h3>
-            <p>We reserve the right to modify or replace these Terms at any time. We will provide notice of any changes by posting the new Terms on this page.</p>
+            <h3>10. Modifications des conditions</h3>
+            <p>Nous nous réservons le droit de modifier ces conditions à tout moment. Les nouvelles conditions seront publiées sur cette page.</p>
             <div class="notice-box">
               <i class="bi bi-bell"></i>
-              <p>By continuing to access or use our service after those revisions become effective, you agree to be bound by the revised terms.</p>
+              <p>En continuant d’utiliser nos services après la publication des modifications, vous acceptez d’être lié par les conditions mises à jour.</p>
             </div>
+          </div>
+
+          <!-- Vérification de disponibilité et Paiement -->
+          <div id="availability-payment" class="content-section" data-aos="fade-up" data-aos-delay="550">
+            <h3>11. Vérification de la disponibilité et Paiement</h3>
+            <p>
+              Avant d’effectuer tout paiement, vous devez vérifier attentivement la disponibilité de la location. Si vous ne le faites pas et qu’un remboursement s’avère nécessaire, des frais pourront être déduits.
+            </p>
           </div>
         </div>
 
-        <!-- Contact Section -->
+        <!-- Section Contact -->
         <div class="tos-contact" data-aos="fade-up" data-aos-delay="300">
           <div class="contact-box">
             <div class="contact-icon">
               <i class="bi bi-envelope"></i>
             </div>
             <div class="contact-content">
-              <h4>Questions About Terms?</h4>
-              <p>If you have any questions about these Terms, please contact us.</p>
-              <a href="#" class="contact-link">Contact Support</a>
+              <h4>Des questions sur les conditions ?</h4>
+              <p>Si vous avez des questions concernant ces conditions, n’hésitez pas à nous contacter.</p>
+              <a href="#" class="contact-link">Contacter le support</a>
             </div>
           </div>
         </div>
       </div>
 
-    </section><!-- /Terms Of Service Section -->
+    </section><!-- Fin Section Conditions Générales -->
+
 @endsection

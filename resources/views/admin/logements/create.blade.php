@@ -132,7 +132,7 @@
 
                         <!-- Caution -->
                         <div>
-                            <label for="caution" class="block font-medium text-sm text-gray-700">Caution (€) <span
+                            <label for="caution" class="block font-medium text-sm text-gray-700">Caution (FCFA) <span
                                     class="text-red-600">*</span></label>
                             <input id="caution" name="caution" type="number" step="0.01" min="0" required
                                 value="{{ old('caution') }}"
@@ -318,12 +318,59 @@
                         </div>
 
                         <!-- Photos -->
+
+
+                        <style>
+                            .upload-btn {
+                                display: inline-flex;
+                                align-items: center;
+                                padding: 0.5rem 1rem;
+                                background-color: #4F46E5;
+                                /* indigo-600 */
+                                color: #fff;
+                                border-radius: 0.375rem;
+                                cursor: pointer;
+                                transition: background-color 0.3s ease;
+                                font-weight: 500;
+                            }
+
+                            .upload-btn:hover {
+                                background-color: #4338CA;
+                                /* indigo-700 */
+                            }
+
+                            .upload-btn svg {
+                                margin-right: 0.5rem;
+                            }
+
+                            .preview-img {
+                                width: 120px;
+                                height: 90px;
+                                object-fit: cover;
+                                border-radius: 0.5rem;
+                                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+                            }
+
+                            .photos-preview {
+                                display: flex;
+                                flex-wrap: wrap;
+                                gap: 1rem;
+                                margin-top: 1rem;
+                            }
+
+                            .error-text {
+                                color: #DC2626;
+                                /* red-600 */
+                                font-size: 0.875rem;
+                                margin-top: 0.5rem;
+                            }
+                        </style>
+
                         <div class="md:col-span-2">
                             <label for="photos" class="block font-medium text-sm text-gray-700 mb-2">Photos</label>
 
-                            <label for="photos"
-                                class="cursor-pointer inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
+                            <label for="photos" class="upload-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M4 12l4-4m0 0l4 4m-4-4v12" />
@@ -334,45 +381,70 @@
                             <input id="photos" name="photos[]" type="file" multiple accept="image/*"
                                 class="hidden" onchange="previewImages(event)" />
 
-                            <div id="photosPreview" class="mt-4 flex flex-wrap gap-4"></div>
+                            <div id="photosPreview" class="photos-preview"></div>
 
                             @error('photos.*')
-                                <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                                <p class="error-text">{{ $message }}</p>
                             @enderror
                         </div>
 
                         <script>
                             function previewImages(event) {
                                 const preview = document.getElementById('photosPreview');
-                                preview.innerHTML = ''; // Clear previous previews
+                                preview.innerHTML = ''; // Clear existing previews
 
                                 const files = event.target.files;
-                                if (files.length === 0) return;
 
-                                Array.from(files).forEach(file => {
-                                    if (!file.type.startsWith('image/')) return;
-
-                                    const reader = new FileReader();
-                                    reader.onload = function(e) {
-                                        const img = document.createElement('img');
-                                        img.src = e.target.result;
-                                        img.classList.add('h-20', 'w-20', 'object-cover', 'rounded-md', 'border',
-                                            'border-gray-300');
-                                        preview.appendChild(img);
-                                    };
-                                    reader.readAsDataURL(file);
-                                });
+                                if (files) {
+                                    Array.from(files).forEach(file => {
+                                        const reader = new FileReader();
+                                        reader.onload = function(e) {
+                                            const img = document.createElement('img');
+                                            img.src = e.target.result;
+                                            img.classList.add('preview-img');
+                                            preview.appendChild(img);
+                                        };
+                                        reader.readAsDataURL(file);
+                                    });
+                                }
                             }
                         </script>
 
+
                     </div>
 
+                    <style>
+                        .btn-ajouter {
+                            width: 20%;
+                            padding: 0.5rem 1rem;
+                            background-color: #4F46E5;
+                            /* indigo-600 */
+                            border: none;
+                            border-radius: 0.375rem;
+                            font-weight: 600;
+                            color: #fff;
+                            cursor: pointer;
+                            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+                            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+                        }
+
+                        .btn-ajouter:hover {
+                            background-color: #4338CA;
+                            /* indigo-700 */
+                        }
+
+                        .btn-ajouter:focus {
+                            outline: none;
+                            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5);
+                        }
+                    </style>
+
                     <div class="flex justify-center mt-6">
-                        <button type="submit" style="width: 20%;"
-                            class="px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        <button type="submit" class="btn-ajouter">
                             Ajouter
                         </button>
                     </div>
+
 
 
                 </form>

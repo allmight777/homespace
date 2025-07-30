@@ -101,6 +101,14 @@
                     <!-- Main Property Info -->
                     <div class="property-info mb-5" data-aos="fade-up" data-aos-delay="300">
                         <div class="property-header">
+                            <div class="bg-light border-start border-4 border-primary rounded p-3 shadow-sm mb-3">
+                                <h5 class="mb-0 text-danger fw-bold">
+                                    🏠 ID de l'appartement :
+                                    <span class="badge bg-danger text-white ms-2 px-3 py-2">
+                                        {{ $logement->id }}
+                                    </span>
+                                </h5>
+                            </div>
                             <h2 class="property-title">{{ $logement->nom }}</h2>
                             <div class="property-meta">
                                 <span class="address"><i class="bi bi-geo-alt"></i> {{ $logement->localisation }}</span>
@@ -206,12 +214,12 @@
 
 
                         <!-- Bouton téléphone -->
-                        <div class="agent-contact text-center mt-4">
-                            <a href="tel:{{ $logement->contact_tel }}" class="btn btn-success btn-lg px-4">
-                                <i class="bi bi-telephone-fill me-2"></i>
-                                Appeler le propriétaire
-                            </a>
-                        </div>
+
+                        <a href="{{ route('users') }}" class="btn btn-danger btn-lg w-100 mb-3">
+                            <i class="bi bi-calendar-check"></i>
+                            Lancer une demande de réservation
+                        </a>
+
 
                     </div>
                 </div>
@@ -351,7 +359,7 @@
                         <div class="agent-card mb-4" data-aos="fade-up" data-aos-delay="350">
                             <div class="agent-header">
                                 <div class="agent-avatar">
-                                    <img src="{{ asset('images/image_12.webp') }}" class="img-fluid" alt="Agent Photo">
+                                    <img src="{{ asset('images/image_19.webp') }}" class="img-fluid" alt="Agent Photo">
                                     <div class="online-status"></div>
                                 </div>
                                 <div class="agent-info">
@@ -374,11 +382,11 @@
                             <div class="agent-contact">
                                 <div class="contact-item">
                                     <i class="bi bi-telephone"></i>
-                                    <span><a href="tel:+2290194849958">+229 01 53947056</a></span>
+                                    <span><a href="tel:+2290153947056">+229 01 53947056</a></span>
                                 </div>
                                 <div class="contact-item">
                                     <i class="bi bi-envelope"></i>
-                                    <span><a href="mailto:agoliganange15@gmail.com">agoliganange15@gmail.com</a></span>
+                                    <span><a href="mailto:noelfassinou53@gmail.com">noelfassinou53@gmail.com</a></span>
                                 </div>
                             </div>
 
