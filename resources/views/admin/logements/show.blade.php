@@ -1,7 +1,5 @@
 <x-app-layout>
-    <br><br>
     <x-slot name="header">
-
         <div class="flex items-center justify-between">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('Détails du logement') }}
@@ -10,75 +8,123 @@
                 class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                 Voir la liste
             </a>
-
         </div>
     </x-slot>
 
-    <div class="max-w-4xl mx-auto py-6 px-4 sm:px-6 lg:px-8 bg-white rounded shadow space-y-6">
+    <style>
+        .detail-container {
+            background-color: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+            margin: 2rem auto;
+        }
 
-        <h3 class="text-2xl font-bold mb-4">{{ $logement->nom }}</h3>
+        .detail-title {
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-700 text-sm">
-            <div><span class="font-semibold">Type :</span> {{ $logement->type }}</div>
-            <div><span class="font-semibold">Prix :</span> {{ number_format($logement->prix, 2, ',', ' ') }} FCFA</div>
-            <div><span class="font-semibold">Localisation :</span> {{ $logement->localisation }}</div>
-            <div><span class="font-semibold">Propriétaire :</span> {{ $logement->proprietaire }}</div>
-            <div><span class="font-semibold">Locataire :</span> {{ $logement->locataire ?? '-' }}</div>
-            <div><span class="font-semibold">Genre Locataire :</span> {{ ucfirst($logement->genre_locataire) }}</div>
-            <div><span class="font-semibold">Nombre d’avances :</span> {{ $logement->nbr_avance }}</div>
-            <div><span class="font-semibold">Caution :</span> {{ number_format($logement->caution, 2, ',', ' ') }} €
-            </div>
-            <div><span class="font-semibold">Eau :</span> {{ $logement->eau ? 'Oui' : 'Non' }}</div>
-            <div><span class="font-semibold">Type compteur eau :</span> {{ $logement->type_compteur_eau ?? '-' }}</div>
-            <div><span class="font-semibold">Electricité :</span> {{ $logement->electricite ? 'Oui' : 'Non' }}</div>
-            <div><span class="font-semibold">Type compteur électricité :</span>
-                {{ $logement->type_compteur_electricite ?? '-' }}</div>
-            <div><span class="font-semibold">Surface :</span> {{ $logement->surface ?? '-' }} m²</div>
-            <div><span class="font-semibold">Nombre de pièces :</span> {{ $logement->nombre_pieces ?? '-' }}</div>
-            <div><span class="font-semibold">Meublé :</span> {{ $logement->meuble ? 'Oui' : 'Non' }}</div>
-            <div><span class="font-semibold">Type chauffage :</span> {{ $logement->type_chauffage ?? '-' }}</div>
-            <div><span class="font-semibold">Charges :</span> {{ $logement->charges ?? '-' }} €</div>
-            <div><span class="font-semibold">Wifi inclus :</span> {{ $logement->wifi_inclus ? 'Oui' : 'Non' }}</div>
-            <div><span class="font-semibold">Statut :</span> {{ ucfirst($logement->statut) }}</div>
-            <div><span class="font-semibold">Disponibilité :</span>
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            color: #374151;
+            font-size: 0.95rem;
+        }
+
+        .detail-grid span {
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .photo-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .photo-wrapper img {
+            width: 190px;
+            height: 135px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            color: #1f2937;
+        }
+
+        .description-text {
+            color: #4b5563;
+            white-space: pre-line;
+            margin-top: 0.5rem;
+        }
+    </style>
+
+    <div class="max-w-5xl mx-auto detail-container">
+        <h3 class="detail-title">{{ $logement->nom }}</h3>
+
+        <div class="detail-grid">
+            <div><span>Type :</span> {{ $logement->type }}</div>
+            <div><span>Prix :</span> {{ number_format($logement->prix, 2, ',', ' ') }} FCFA</div>
+            <div><span>Localisation :</span> {{ $logement->localisation }}</div>
+            <div><span>Propriétaire :</span> {{ $logement->proprietaire }}</div>
+            <div><span>Locataire :</span> {{ $logement->locataire ?? '-' }}</div>
+            <div><span>Genre Locataire :</span> {{ ucfirst($logement->genre_locataire) }}</div>
+            <div><span>Nombre d’avances :</span> {{ $logement->nbr_avance }}</div>
+            <div><span>Caution :</span> {{ number_format($logement->caution, 2, ',', ' ') }} €</div>
+            <div><span>Eau :</span> {{ $logement->eau ? 'Oui' : 'Non' }}</div>
+            <div><span>Type compteur eau :</span> {{ $logement->type_compteur_eau ?? '-' }}</div>
+            <div><span>Électricité :</span> {{ $logement->electricite ? 'Oui' : 'Non' }}</div>
+            <div><span>Type compteur électricité :</span> {{ $logement->type_compteur_electricite ?? '-' }}</div>
+            <div><span>Surface :</span> {{ $logement->surface ?? '-' }} m²</div>
+            <div><span>Nombre de pièces :</span> {{ $logement->nombre_pieces ?? '-' }}</div>
+            <div><span>Meublé :</span> {{ $logement->meuble ? 'Oui' : 'Non' }}</div>
+            <div><span>Type chauffage :</span> {{ $logement->type_chauffage ?? '-' }}</div>
+            <div><span>Charges :</span> {{ $logement->charges ?? '-' }} €</div>
+            <div><span>Wifi inclus :</span> {{ $logement->wifi_inclus ? 'Oui' : 'Non' }}</div>
+            <div><span>Statut :</span> {{ ucfirst($logement->statut) }}</div>
+            <div><span>Disponibilité :</span>
                 {{ $logement->disponibilite ? \Carbon\Carbon::parse($logement->disponibilite)->format('d/m/Y') : '-' }}
             </div>
         </div>
 
         <div>
-            <h4 class="text-lg font-semibold mb-2">Description</h4>
-            <p class="text-gray-700 whitespace-pre-line">{{ $logement->description ?? '-' }}</p>
+            <h4 class="section-title">Description</h4>
+            <p class="description-text">{{ $logement->description ?? '-' }}</p>
         </div>
-<div>
-    <h4 class="text-lg font-semibold mb-2">Photos</h4>
-    <div class="flex flex-wrap gap-4">
-        @php
-            // Si c'est une chaîne JSON, on décode, sinon on utilise directement
-            $photos = $logement->photos;
-            if (is_string($photos)) {
-                $photos = json_decode($photos, true);
-            }
-        @endphp
 
-        @if (!empty($photos) && is_array($photos))
-            @foreach ($photos as $photo)
+        <div>
+            <h4 class="section-title">Photos</h4>
+            <div class="photo-wrapper">
                 @php
-                    // Nettoyage du chemin pour éviter double slash
-                    $photoPath = ltrim($photo, '/');
-                    // Générer le chemin complet
-                    $url = asset("storage/{$photoPath}");
+                    $photos = $logement->photos;
+                    if (is_string($photos)) {
+                        $photos = json_decode($photos, true);
+                    }
                 @endphp
 
-                <img src="{{ $url }}" alt="Photo du logement" class="w-48 h-32 object-cover rounded shadow" />
-            @endforeach
-        @else
-            <p>Aucune photo disponible</p>
-        @endif
+                @if (!empty($photos) && is_array($photos))
+                    @foreach ($photos as $photo)
+                        @php
+                            $photoPath = ltrim($photo, '/');
+                            $url = asset("storage/{$photoPath}");
+                        @endphp
+
+                        <img src="{{ $url }}" alt="Photo du logement" />
+                    @endforeach
+                @else
+                    <p>Aucune photo disponible</p>
+                @endif
+            </div>
+        </div>
     </div>
-</div>
-
-
-
-    </div>
-    <br><br>
 </x-app-layout>

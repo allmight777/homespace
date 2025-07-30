@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\LogementController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\MaisonController;
 use App\Http\Controllers\PaiementController;
 use App\Http\Controllers\ProfileController;
@@ -10,22 +11,37 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
+
 // La routes des contacts
 Route::get('/contacts', function () {
     return view('contacts.contact');
 })->name('contact');
+
 // la routes des agents
 Route::get('/agents', function () {
     return view('contacts.agent');
 })->name('agent');
+
 // la route des services
 Route::get('/services', function () {
     return view('contacts.service');
 })->name('service');
+
 // la route des terms
 Route::get('/terms', function () {
     return view('contacts.terms');
 })->name('terms');
+
+// La route pour about us
+Route::get('/abouts', function () {
+    return view('contacts.abouts');
+})->name('abouts');
+
+// la route privacy
+Route::get('/privacy', function () {
+    return view('contacts.privacy');
+})->name('privacy');
+
 // La route pour les proprietes
 Route::get('/logements', [MaisonController::class, 'index'])->name('maison');
 // show details
@@ -37,9 +53,19 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
         return view('admin.dashboard');
     })->name('dashboard');
 
-    // Exemple de route ressource pour gérer les logements
+    // route pour gerer les users
+    Route::get('/admin/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/admin/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+    Route::put('/admin/users/{user}', [UserController::class, 'update'])->name('users.update');
+    Route::delete('/admin/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+
+    // route ressource pour gérer les logements
     Route::resource('logements', LogementController::class);
     Route::get('admin/logements/{logement}', [LogementController::class, 'show'])->name('logements.show');
+
+    // route pour gestion des demandes
+    Route::get('/paiements', [PaiementController::class, 'index'])->name('paiements.index');
+    Route::post('/paiements/{paiement}/update-status', [PaiementController::class, 'updateStatus'])->name('paiements.updateStatus');
 
 });
 
@@ -55,11 +81,14 @@ Route::middleware('auth')->group(function () {
     })->name('users');
 
     // Route de paiment
-  Route::get('/paiement', [PaiementController::class, 'payer'])->name('paiement.lancer');
-    Route::post('/paiement/enregistrer', [PaiementController::class, 'enregistrer'])->name('paiement.enregistrer');
-    Route::post('/paiement/success', [PaiementController::class, 'paiementSuccess'])->name('paiement.success');
-    Route::get('/paiement/confirmation', [PaiementController::class, 'confirmation'])->name('paiement.confirmation');
+    Route::get('/paiement', [PaiementController::class, 'lancer'])->name('paiement.lancer');
+    Route::post('/paiement/initier', [PaiementController::class, 'initierPaiement'])->name('paiement.initier');
+    Route::post('/paiement/confirmer', [PaiementController::class, 'confirmerPaiement'])->name('paiement.confirmer');
+    Route::get('/paiement/confirmation/{id}', [PaiementController::class, 'confirmation'])->name('paiement.confirmation');
 
+    // Suivi des demandes de l'utilisateurs
+
+    Route::get('/mes-paiements', [PaiementController::class, 'mesPaiements'])->name('mes.paiements');
 });
 
 require __DIR__.'/auth.php';

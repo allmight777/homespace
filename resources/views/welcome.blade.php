@@ -4,7 +4,7 @@
     <style>
         #ca-titre {
             background-color: #198754;
-            /* Vert Bootstrap ou remplace par ton vert */
+
             color: white;
             padding: 40px 0;
             width: 100%;
@@ -64,9 +64,8 @@
                                                 <option value="">All Types</option>
                                                 <option value="house">Single House</option>
                                                 <option value="apartment">Apartment</option>
-                                                <option value="condo">Condominium</option>
                                                 <option value="villa">Villa</option>
-                                                <option value="commercial">Commercial</option>
+                                                <option value="commercial">Autres</option>
                                             </select>
                                             <i class="bi bi-building field-icon"></i>
                                         </div>
@@ -75,11 +74,11 @@
                                             <label for="search-budget" class="field-label">Budget Range</label>
                                             <select id="search-budget" name="price_range" required="">
                                                 <option value="">Any Price</option>
-                                                <option value="0-300000">Under $300K</option>
-                                                <option value="300000-600000">$300K - $600K</option>
-                                                <option value="600000-900000">$600K - $900K</option>
-                                                <option value="900000-1500000">$900K - $1.5M</option>
-                                                <option value="1500000+">Above $1.5M</option>
+                                        
+                                                <option value="300000-600000">5.000Fcfa - 15.000Fcfa</option>
+                                                <option value="600000-900000">15.000Fcfa - 30.000Fcfa</option>
+                                                <option value="900000-1500000"> > 30.000Fcfa</option>
+
                                             </select>
                                             <i class="bi bi-currency-dollar field-icon"></i>
                                         </div>
@@ -161,7 +160,7 @@
 <br>
                                 <div class="agent-card">
                                     <div class="agent-profile">
-                                        <img src="{{ asset('images/image_3.webp') }}" alt="House" class="agent-photo">
+                                        <img src="{{ asset('images/image_19.webp') }}" alt="House" class="agent-photo">
                                         <div class="agent-info">
                                             <h4>FASSINOU Noel</h4>
                                             <p>Conseiller immobilier senior</p>
@@ -190,7 +189,7 @@
                                         <img src="{{ asset('images/image_3.webp') }}" alt="House" class="agent-photo">
                                         <div class="agent-info">
                                             <h4>TOMETIN Fréjus</h4>
-                                            <p>Conseiller immobilier senior</p>
+                                            <p>Conseiller</p>
 
                                             <div class="agent-rating">
                                                 <div class="stars">
@@ -213,10 +212,10 @@
 
                                 <div class="agent-card">
                                     <div class="agent-profile">
-                                        <img src="{{ asset('images/image_3.webp') }}" alt="House" class="agent-photo">
+                                        <img src="{{ asset('images/image_15.webp') }}" alt="House" class="agent-photo">
                                         <div class="agent-info">
-                                            <h4>TOMETIN Fréjus</h4>
-                                            <p>Conseiller immobilier senior</p>
+                                            <h4>NADEGE Nadege</h4>
+                                            <p>Conseiller</p>
 
                                             <div class="agent-rating">
                                                 <div class="stars">
@@ -259,7 +258,7 @@
                             <div class="experience-badge">
                                 <div class="badge-content">
                                     <div class="number">
-                                        <span data-purecounter-start="0" data-purecounter-end="15"
+                                        <span data-purecounter-start="0" data-purecounter-end="2"
                                             data-purecounter-duration="1" class="purecounter"></span>+
                                     </div>
                                     <div class="text">Ans<br>d'expérience</div>
@@ -276,10 +275,10 @@
                     <div class="content">
                         <div class="section-header">
                             <span class="section-label">À propos de nous</span>
-                            <h2>Construire des projets, créer des logements depuis 2008</h2>
+                            <h2>Construire des projets, créer des logements depuis 2023</h2>
                         </div>
 
-                        <p>Depuis plus de 15 ans, nous aidons étudiants, jeunes actifs et familles à trouver le logement
+                        <p>Depuis plus de 2 ans, nous aidons étudiants, jeunes actifs et familles à trouver le logement
                             idéal. Nous mettons à disposition des offres fiables et un accompagnement personnalisé pour vous
                             garantir une expérience sereine.</p>
 
@@ -290,7 +289,7 @@
                                 </div>
                                 <div class="achievement-content">
                                     <h4>
-                                        <span data-purecounter-start="0" data-purecounter-end="3200"
+                                        <span data-purecounter-start="0" data-purecounter-end="250"
                                             data-purecounter-duration="2" class="purecounter"></span>+ logements trouvés
                                     </h4>
                                     <p>Des milliers de mises en relation réussies</p>
@@ -457,7 +456,7 @@
             </div>
 
             <div class="text-center mt-5" data-aos="zoom-in" data-aos-delay="600">
-                <a href="services.html" class="btn-view-all">
+                <a href="{{ route('service') }}" class="btn-view-all">
                     <span>Voir tous les services</span>
                     <i class="bi bi-arrow-right"></i>
                 </a>
@@ -488,13 +487,13 @@
                     <div class="featured-agent">
                         <div class="agent-wrapper">
                             <div class="agent-photo">
-                                <img src="assets/img/real-estate/agent-3.webp" alt="Agent Vedette" class="img-fluid">
+                                <img src="{{ asset('images/image_19.webp') }}" alt="Agent Vedette" class="img-fluid">
                                 <div class="overlay-info">
                                     <div class="contact-actions">
-                                        <a href="tel:+22997451234" class="contact-btn phone" title="Appeler">
+                                        <a href="tel:+2290147877811" class="contact-btn phone" title="Appeler">
                                             <i class="bi bi-telephone-fill"></i>
                                         </a>
-                                        <a href="mailto:noel.fassinou@example.com" class="contact-btn email"
+                                        <a href="mailto:noelfassinou53@gmail.com" class="contact-btn email"
                                             title="Envoyer un email">
                                             <i class="bi bi-envelope-fill"></i>
                                         </a>
@@ -513,7 +512,7 @@
                                     <span class="tag">Logements étudiants</span>
                                     <span class="tag">Studios & Apparts</span>
                                 </div>
-                                <a href="agent-profile.html" class="view-profile">Voir le profil</a>
+                                <a href="{{ route('agent') }}" class="view-profile">Voir le profil</a>
                             </div>
                         </div>
                     </div>
@@ -524,13 +523,13 @@
                     <div class="featured-agent">
                         <div class="agent-wrapper">
                             <div class="agent-photo">
-                                <img src="assets/img/real-estate/agent-7.webp" alt="Agent Vedette" class="img-fluid">
+                                <img src="{{ asset('images/image_12.webp') }}" alt="Agent Vedette" class="img-fluid">
                                 <div class="overlay-info">
                                     <div class="contact-actions">
-                                        <a href="tel:+22996459873" class="contact-btn phone" title="Appeler">
+                                        <a href="tel:+2290194849958" class="contact-btn phone" title="Appeler">
                                             <i class="bi bi-telephone-fill"></i>
                                         </a>
-                                        <a href="mailto:marcus.hayes@example.com" class="contact-btn email"
+                                        <a href="mailto:agoliganange15@gmail.com" class="contact-btn email"
                                             title="Envoyer un email">
                                             <i class="bi bi-envelope-fill"></i>
                                         </a>
@@ -539,7 +538,7 @@
                                 <span class="achievement-badge expert">Expert</span>
                             </div>
                             <div class="agent-details">
-                                <h4>Marcus Hayes</h4>
+                                <h4>AGOLIGAN Ange</h4>
                                 <span class="position">Spécialiste Immobilier Commercial</span>
                                 <div class="location-info">
                                     <i class="bi bi-geo-alt-fill"></i>
@@ -549,7 +548,7 @@
                                     <span class="tag">Bureaux</span>
                                     <span class="tag">Espaces Commerciaux</span>
                                 </div>
-                                <a href="agent-profile.html" class="view-profile">Voir le profil</a>
+                                <a href="{{ route('agent') }}" class="view-profile">Voir le profil</a>
                             </div>
                         </div>
                     </div>
@@ -563,10 +562,10 @@
                                 <img src="assets/img/real-estate/agent-5.webp" alt="Agent Vedette" class="img-fluid">
                                 <div class="overlay-info">
                                     <div class="contact-actions">
-                                        <a href="tel:+22997865432" class="contact-btn phone" title="Appeler">
+                                        <a href="tel:+2290194849958" class="contact-btn phone" title="Appeler">
                                             <i class="bi bi-telephone-fill"></i>
                                         </a>
-                                        <a href="mailto:sophia.rivera@example.com" class="contact-btn email"
+                                        <a href="mailto:agoliganange15@gmail.com" class="contact-btn email"
                                             title="Envoyer un email">
                                             <i class="bi bi-envelope-fill"></i>
                                         </a>

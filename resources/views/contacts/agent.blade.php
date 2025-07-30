@@ -32,24 +32,53 @@
                         <div class="agent-info">
                             <h4>AGOLIGAN T. Ange</h4>
                             <span class="role">Senior Property Advisor</span>
-                            <p class="location"><i class="bi bi-geo-alt"></i>vDowntown Miami</p>
+                            <p class="location"><i class="bi bi-geo-alt"></i>Cadjehoun</p>
                             <div class="specialties">
                                 <span class="specialty-tag">Luxury Homes</span>
                                 <span class="specialty-tag">Condos</span>
                             </div>
                             <div class="contact-links">
                                 <a href="tel:+2290194849958"><i class="bi bi-telephone"></i></a>
-                                <a href="mailto:sarah@example.com"><i class="bi bi-envelope"></i></a>
+                                <a href="mailto:agoliganange15@gmail.com"><i class="bi bi-envelope"></i></a>
                                 <a href="https://wa.me/94849958?text=Bonjour%2C%20je%20suis%20intéressé(e)%20par%20le%20logement."
                                     target="_blank"><i class="bi bi-whatsapp"></i></a>
-                               <!-- <a href="#"><i class="bi bi-linkedin"></i></a> -->
+                                <!-- <a href="#"><i class="bi bi-linkedin"></i></a> -->
                             </div>
                             <a href="#" class="view-listings-btn">View Listings</a>
                         </div>
                     </div>
                 </div><!-- End Agent Card -->
 
-                        <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="agent-card">
+                        <div class="agent-image">
+                            <img src="{{ asset('images/image_20.webp') }}" alt="Agent" class="img-fluid">
+                            <div class="badge-overlay">
+                                <span class="top-seller-badge">Top Seller</span>
+                            </div>
+                        </div>
+                        <div class="agent-info">
+                            <h4>FASSINOU Noel</h4>
+                            <span class="role">Senior Property Advisor</span>
+                            <p class="location"><i class="bi bi-geo-alt"></i>Gbegamey</p>
+                            <div class="specialties">
+                                <span class="specialty-tag">Luxury Homes</span>
+                                <span class="specialty-tag">Condos</span>
+                            </div>
+                            <div class="contact-links">
+                                <a href="tel:+2290147877811"><i class="bi bi-telephone"></i></a>
+                                <a href="mailto:noelfassinou53@gmail.com"><i class="bi bi-envelope"></i></a>
+                                <a href="https://wa.me/53947056?text=Bonjour%2C%20je%20suis%20intéressé(e)%20par%20le%20logement."
+                                    target="_blank"><i class="bi bi-whatsapp"></i></a>
+                                <!-- <a href="#"><i class="bi bi-linkedin"></i></a> -->
+                            </div>
+                            <a href="#" class="view-listings-btn">View Listings</a>
+                        </div>
+                    </div>
+                </div><!-- End Agent Card -->
+
+
+                <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="agent-card">
                         <div class="agent-image">
                             <img src="{{ asset('images/image_12.webp') }}" alt="Agent" class="img-fluid">
@@ -60,80 +89,50 @@
                         <div class="agent-info">
                             <h4>AGOLIGAN T. Ange</h4>
                             <span class="role">Senior Property Advisor</span>
-                            <p class="location"><i class="bi bi-geo-alt"></i>vDowntown Miami</p>
+                            <p class="location"><i class="bi bi-geo-alt"></i>Cadjehoun</p>
                             <div class="specialties">
                                 <span class="specialty-tag">Luxury Homes</span>
                                 <span class="specialty-tag">Condos</span>
                             </div>
                             <div class="contact-links">
                                 <a href="tel:+2290194849958"><i class="bi bi-telephone"></i></a>
-                                <a href="mailto:sarah@example.com"><i class="bi bi-envelope"></i></a>
+                                <a href="mailto:agoliganange15@gmail.com"><i class="bi bi-envelope"></i></a>
                                 <a href="https://wa.me/94849958?text=Bonjour%2C%20je%20suis%20intéressé(e)%20par%20le%20logement."
                                     target="_blank"><i class="bi bi-whatsapp"></i></a>
-                               <!-- <a href="#"><i class="bi bi-linkedin"></i></a> -->
+                                <!-- <a href="#"><i class="bi bi-linkedin"></i></a> -->
                             </div>
                             <a href="#" class="view-listings-btn">View Listings</a>
                         </div>
                     </div>
                 </div><!-- End Agent Card -->
 
-                        <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="agent-card">
                         <div class="agent-image">
-                            <img src="{{ asset('images/image_12.webp') }}" alt="Agent" class="img-fluid">
+                            <img src="{{ asset('images/image_20.webp') }}" alt="Agent" class="img-fluid">
                             <div class="badge-overlay">
                                 <span class="top-seller-badge">Top Seller</span>
                             </div>
                         </div>
                         <div class="agent-info">
-                            <h4>AGOLIGAN T. Ange</h4>
+                            <h4>FASSINOU Noel</h4>
                             <span class="role">Senior Property Advisor</span>
-                            <p class="location"><i class="bi bi-geo-alt"></i>vDowntown Miami</p>
+                            <p class="location"><i class="bi bi-geo-alt"></i>Gbegamey</p>
                             <div class="specialties">
                                 <span class="specialty-tag">Luxury Homes</span>
                                 <span class="specialty-tag">Condos</span>
                             </div>
                             <div class="contact-links">
-                                <a href="tel:+2290194849958"><i class="bi bi-telephone"></i></a>
-                                <a href="mailto:sarah@example.com"><i class="bi bi-envelope"></i></a>
-                                <a href="https://wa.me/94849958?text=Bonjour%2C%20je%20suis%20intéressé(e)%20par%20le%20logement."
+                                <a href="tel:+2290147877811"><i class="bi bi-telephone"></i></a>
+                                <a href="mailto:noelfassinou53@gmail.com"><i class="bi bi-envelope"></i></a>
+                                <a href="https://wa.me/53947056?text=Bonjour%2C%20je%20suis%20intéressé(e)%20par%20le%20logement."
                                     target="_blank"><i class="bi bi-whatsapp"></i></a>
-                               <!-- <a href="#"><i class="bi bi-linkedin"></i></a> -->
+                                <!-- <a href="#"><i class="bi bi-linkedin"></i></a> -->
                             </div>
                             <a href="#" class="view-listings-btn">View Listings</a>
                         </div>
                     </div>
                 </div><!-- End Agent Card -->
-
-                        <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="agent-card">
-                        <div class="agent-image">
-                            <img src="{{ asset('images/image_12.webp') }}" alt="Agent" class="img-fluid">
-                            <div class="badge-overlay">
-                                <span class="top-seller-badge">Top Seller</span>
-                            </div>
-                        </div>
-                        <div class="agent-info">
-                            <h4>AGOLIGAN T. Ange</h4>
-                            <span class="role">Senior Property Advisor</span>
-                            <p class="location"><i class="bi bi-geo-alt"></i>vDowntown Miami</p>
-                            <div class="specialties">
-                                <span class="specialty-tag">Luxury Homes</span>
-                                <span class="specialty-tag">Condos</span>
-                            </div>
-                            <div class="contact-links">
-                                <a href="tel:+2290194849958"><i class="bi bi-telephone"></i></a>
-                                <a href="mailto:sarah@example.com"><i class="bi bi-envelope"></i></a>
-                                <a href="https://wa.me/94849958?text=Bonjour%2C%20je%20suis%20intéressé(e)%20par%20le%20logement."
-                                    target="_blank"><i class="bi bi-whatsapp"></i></a>
-                               <!-- <a href="#"><i class="bi bi-linkedin"></i></a> -->
-                            </div>
-                            <a href="#" class="view-listings-btn">View Listings</a>
-                        </div>
-                    </div>
-                </div><!-- End Agent Card -->
-
-
 
 
 

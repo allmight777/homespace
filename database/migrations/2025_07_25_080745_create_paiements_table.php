@@ -14,7 +14,7 @@ class CreatePaiementsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->integer('montant')->default(1500);
-            $table->string('status')->default('en_attente'); // en_attente, approuvé, échoué
+            $table->string('status')->default('en_attente');
             $table->string('transaction_id')->nullable();
             $table->timestamps();
         });

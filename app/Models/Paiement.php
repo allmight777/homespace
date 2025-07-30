@@ -14,4 +14,14 @@ class Paiement extends Model
         'apartment_id',
         'description',
     ];
+
+    protected $attributes = [
+        'status' => 'en_attente',
+        'montant' => 100,
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -292,12 +292,31 @@
                 </div>
 
                 <!-- Bouton -->
-                <div class="flex justify-center mt-6">
-                        <button type="submit" style="width: 20%;"
-                            class="px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                            Modifier
-                        </button>
-                    </div>
+              <div style="display: flex; justify-content: center; margin-top: 24px;">
+  <button
+    type="submit"
+    style="
+      width: 20%;
+      padding: 10px 0;
+      background-color: #4f46e5; /* Indigo 600 */
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      outline: none;
+    "
+    onmouseover="this.style.backgroundColor='#4338ca'"
+    onmouseout="this.style.backgroundColor='#4f46e5'"
+    onfocus="this.style.boxShadow='0 0 0 3px rgba(99, 102, 241, 0.5)'"
+    onblur="this.style.boxShadow='none'"
+  >
+    Modifier
+  </button>
+</div>
+
             </form>
 
         </div>
