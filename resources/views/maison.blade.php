@@ -33,7 +33,7 @@
             <h1 class="mb-2 mb-lg-0">Logements disponibles</h1>
             <nav class="breadcrumbs">
                 <ol>
-                    <li><a href="{{ url('/') }}">Accueil</a></li>
+                    <li><a href="{{ route('welcome') }}">Accueil</a></li>
                     <li class="current">Logements</li>
                 </ol>
             </nav>

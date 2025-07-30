@@ -37,6 +37,9 @@
     <!-- Main CSS File -->
     <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
     <!-- =======================================================
   * Template Name: HomeSpace
   * Template URL: https://bootstrapmade.com/homespace-bootstrap-real-estate-template/
@@ -110,7 +113,8 @@
                     </li>
                     <li><a href="{{ route('contact') }}">Contact</a></li>
 
-    <li>
+
+                    <li>
                         <form method="POST" action="{{ route('logout') }}" style="display: inline;">
                             @csrf
                             <button type="submit" class="btn btn-danger btn-sm"

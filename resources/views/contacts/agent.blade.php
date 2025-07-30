@@ -7,7 +7,7 @@
             <h1 class="mb-2 mb-lg-0">Agents</h1>
             <nav class="breadcrumbs">
                 <ol>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="{{ route('welcome') }}">Home</a></li>
                     <li class="current">Agents</li>
                 </ol>
             </nav>

@@ -26,7 +26,7 @@
             <h1 class="mb-2 mb-lg-0">{{ $logement->nom }}</h1>
             <nav class="breadcrumbs">
                 <ol>
-                    <li><a href="{{ url('/') }}">Accueil</a></li>
+                    <li><a href="{{ route('welcome') }}">Accueil</a></li>
                     <li><a href="{{ route('maison') }}">Logements</a></li>
                     <li class="current">{{ $logement->nom }}</li>
                 </ol>
@@ -251,10 +251,11 @@
                         <!-- Quick Actions -->
                         <div class="actions-card mb-4" data-aos="fade-up" data-aos-delay="250">
                             <div class="action-buttons">
-                                <button class="btn btn-primary btn-lg w-100 mb-3">
+                                <a href="{{ route('users') }}" class="btn btn-primary btn-lg w-100 mb-3">
                                     <i class="bi bi-calendar-check"></i>
-                                    Lancer une demande
-                                </button>
+                                    Lancer une demande de réservation
+                                </a>
+
                                 <div class="row g-2">
                                     <div class="col-6">
                                         <button onclick="window.print()" class="btn btn-outline-secondary w-100">
@@ -411,10 +412,11 @@
                 <!-- Titre de la section -->
                 <div id="ca-titre" class="container-fluid section-title" data-aos="fade-up">
                     <h2>Location &amp; Neighborhood</h2>
-                   <p>Nos agents expérimentés vous accompagnent pour trouver un logement confortable, calme et sécurisé, idéalement situé à proximité de votre campus.</p>
+                    <p>Nos agents expérimentés vous accompagnent pour trouver un logement confortable, calme et sécurisé,
+                        idéalement situé à proximité de votre campus.</p>
 
                 </div><!-- Fin du titre -->
-<br><br>
+                <br><br>
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="map-wrapper">
