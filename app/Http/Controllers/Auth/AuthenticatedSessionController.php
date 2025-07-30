@@ -45,7 +45,7 @@ class AuthenticatedSessionController extends Controller
             return redirect()->intended(route('admin.dashboard', absolute: false));
         } else {
             // Utilisateur actif non admin → redirection vers autre route avec message
-            return redirect()->route('service')
+            return redirect()->route('users')
                 ->with('message', 'Vous êtes connecté');
         }
     }

@@ -11,7 +11,7 @@ class Logement extends Model
 
     protected $table = 'logements';
 
-    // Champs autorisés à la création en masse
+  
     protected $fillable = [
         'nom',
         'type',
@@ -51,10 +51,10 @@ class Logement extends Model
         'electricite' => 'boolean',
         'meuble' => 'boolean',
         'wifi_inclus' => 'boolean',
-        'photos' => 'array',            // cast json automatiquement en array
+        'photos' => 'array',
         'disponibilite' => 'date',
     ];
 
-    // Optionnel : si tu veux des mutators / accessors ou relations, tu peux les ajouter ici
+
 
 }

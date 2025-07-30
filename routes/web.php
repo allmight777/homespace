@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\LogementController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MaisonController;
+use App\Http\Controllers\PaiementController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 // La page welcome
@@ -25,8 +26,10 @@ Route::get('/services', function () {
 Route::get('/terms', function () {
     return view('contacts.terms');
 })->name('terms');
-//La route pour les proprietes
+// La route pour les proprietes
 Route::get('/logements', [MaisonController::class, 'index'])->name('maison');
+// show details
+Route::get('/logements/{id}', [MaisonController::class, 'show'])->name('logements.show');
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
@@ -44,6 +47,19 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // vue pour ceux qui sont pas admin
+
+    Route::get('/users', function () {
+        return view('users');
+    })->name('users');
+
+    // Route de paiment
+  Route::get('/paiement', [PaiementController::class, 'payer'])->name('paiement.lancer');
+    Route::post('/paiement/enregistrer', [PaiementController::class, 'enregistrer'])->name('paiement.enregistrer');
+    Route::post('/paiement/success', [PaiementController::class, 'paiementSuccess'])->name('paiement.success');
+    Route::get('/paiement/confirmation', [PaiementController::class, 'confirmation'])->name('paiement.confirmation');
+
 });
 
 require __DIR__.'/auth.php';
