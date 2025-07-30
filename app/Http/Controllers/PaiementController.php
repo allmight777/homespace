@@ -19,6 +19,8 @@ class PaiementController extends Controller
         return view('paiement.lancer', compact('user'));
     }
 
+    
+
     public function paiementSuccess(Request $request)
     {
         $request->validate([
