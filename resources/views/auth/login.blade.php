@@ -26,12 +26,12 @@
 
         /* Bouton personnalisé */
         .btn-primary-custom {
-            background-color: #011E2C;
-            border-color: #011E2C;
+            background-color: #077F46;
+            border-color: #16df48;
         }
 
         .btn-primary-custom:hover {
-            background-color: #091d27;
+            background-color: #077F46;
             border-color: #f3fcf2;
         }
 

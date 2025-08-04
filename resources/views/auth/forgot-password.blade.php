@@ -23,12 +23,12 @@
         }
 
         .btn-primary-custom {
-            background-color: #011E2C;
+            background-color: #077F46;
             border-color: #011E2C;
         }
 
         .btn-primary-custom:hover {
-            background-color: #03354a;
+            background-color: #077F46;
             border-color: #03354a;
         }
 

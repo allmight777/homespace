@@ -67,8 +67,7 @@ class LogementController extends Controller
 
         $validated['charges'] = $validated['charges'] ?? 0;
 
-Logement::create($validated);
-
+        Logement::create($validated);
 
         return redirect()->route('admin.logements.index')->with('success', 'Logement ajouté avec succès');
     }

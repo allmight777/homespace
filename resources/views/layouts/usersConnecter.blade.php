@@ -94,21 +94,9 @@
                 <ul>
 
                     <li><a href="{{ route('maison') }}">Appartements</a></li>
-                    <li><a href="{{ route('service') }}">Services</a></li>
-                       <li><a href="{{ route('mes.paiements') }}">Mes demandes</a></li>
+
+                    <li><a href="{{ route('mes.paiements') }}">Mes demandes</a></li>
                     <li><a href="{{ route('agent') }}">Agents</a></li>
-                    <li class="dropdown"><a href="#"><span>More Pages</span> <i
-                                class="bi bi-chevron-down toggle-dropdown"></i></a>
-                        <ul>
-
-                            <li><a href="{{ route('terms') }}">Terms</a></li>
-                            <li><a href="{{ route('privacy') }}">Privacy</a></li>
-                             <li><a href="{{ route('abouts') }}">About</a></li>
-
-                        </ul>
-                    </li>
-                    <li><a href="{{ route('contact') }}">Contact</a></li>
-
 
                     <li>
                         <form method="POST" action="{{ route('logout') }}" style="display: inline;">

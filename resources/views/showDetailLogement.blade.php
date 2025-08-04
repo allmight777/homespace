@@ -1,4 +1,4 @@
-@extends('layouts.welcome')
+@extends('layouts.usersConnecter')
 
 @section('content')
     <style>
@@ -33,6 +33,14 @@
             </nav>
         </div>
     </div>
+
+    <!-- message de succes apres connection -->
+    @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
+        </div>
+    @endif
 
     <!-- Property Details Section -->
     <section id="property-details" class="property-details section">
@@ -101,14 +109,7 @@
                     <!-- Main Property Info -->
                     <div class="property-info mb-5" data-aos="fade-up" data-aos-delay="300">
                         <div class="property-header">
-                            <div class="bg-light border-start border-4 border-primary rounded p-3 shadow-sm mb-3">
-                                <h5 class="mb-0 text-danger fw-bold">
-                                    🏠 ID de l'appartement :
-                                    <span class="badge bg-danger text-white ms-2 px-3 py-2">
-                                        {{ $logement->id }}
-                                    </span>
-                                </h5>
-                            </div>
+
                             <h2 class="property-title">{{ $logement->nom }}</h2>
                             <div class="property-meta">
                                 <span class="address"><i class="bi bi-geo-alt"></i> {{ $logement->localisation }}</span>
@@ -198,8 +199,6 @@
 
                             </div>
 
-
-
                         </div>
                         <br><br>
 
@@ -214,14 +213,17 @@
 
 
                         <!-- Bouton téléphone -->
-
-                        <a href="{{ route('users') }}" class="btn btn-danger btn-lg w-100 mb-3">
-                            <i class="bi bi-calendar-check"></i>
-                            Lancer une demande de réservation
-                        </a>
+<button type="button" class="btn btn-success btn-lg w-100 mb-4" data-bs-toggle="modal"
+    data-bs-target="#reservationModal" style="padding: 1.25rem 0; font-size: 1.25rem;">
+    <i class="bi bi-calendar-check"></i>
+    Lancer une demande de réservation
+</button>
 
 
                     </div>
+                    <div class="action-buttons">
+                    </div>
+
                 </div>
 
                 <!-- Sidebar with Calculator -->
@@ -259,10 +261,21 @@
                         <!-- Quick Actions -->
                         <div class="actions-card mb-4" data-aos="fade-up" data-aos-delay="250">
                             <div class="action-buttons">
-                                <a href="{{ route('users') }}" class="btn btn-primary btn-lg w-100 mb-3">
+                                <button type="button" class="btn btn-primary btn-lg w-100 mb-3" data-bs-toggle="modal"
+                                    data-bs-target="#reservationModal">
                                     <i class="bi bi-calendar-check"></i>
                                     Lancer une demande de réservation
-                                </a>
+                                </button>
+
+                                <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap w-100">
+                                    <a href="{{ route('mes.paiements') }}"
+                                        class="btn btn-warning text-white w-100 d-flex justify-content-center align-items-center gap-2 mt-2 mt-md-0">
+                                        <i class="bi bi-file-text-fill"></i>
+                                        Suivre mes demandes
+                                    </a>
+                                </div>
+
+
 
                                 <div class="row g-2">
                                     <div class="col-6">
@@ -465,6 +478,116 @@
                 </div>
             </div>
         </div><!-- End Location Section -->
+
+        <!-- Modal de Réservation -->
+        <!-- Modal -->
+        <div class="modal fade" id="reservationModal" tabindex="-1" aria-labelledby="reservationModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Détails de la réservation</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="list-group mb-3">
+                            <li class="list-group-item"><strong>Appartement :</strong> {{ $logement->nom }}</li>
+                            <li class="list-group-item"><strong>Localisation :</strong> {{ $logement->localisation }}</li>
+                            <li class="list-group-item"><strong>Prix :</strong> {{ number_format($logement->prix) }} FCFA
+                            </li>
+                            <li class="list-group-item"><strong>Nombre de pièces :</strong> {{ $logement->nombre_pieces }}
+                            </li>
+                            <input type="hidden" id="apartment_id" value="{{ $logement->id }}">
+
+                        </ul>
+
+                        <div class="alert alert-info">
+                            En cliquant sur "Payer", vous allez régler les frais de visite, nécessaires avant toute visite
+                            de l'appartement. Ce paiement garantit votre rendez-vous, et ces frais ne sont pas
+                            remboursables.
+                        </div>
+
+                    </div>
+                    <center>
+                        <a href="#" id="pay-now-btn" class="btn btn-success btn-lg w-50 mt-3">
+                            <i class="bi bi-credit-card"></i> Payer maintenant
+                        </a>
+                    </center>
+                    <br>
+
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.fedapay.com/checkout.js?v=1.1.7"></script>
+        <script>
+            document.getElementById('pay-now-btn').addEventListener('click', async function(e) {
+                e.preventDefault();
+
+                const apartmentId = document.getElementById('apartment_id').value;
+
+                try {
+                    // 1. Envoie une requête pour initier le paiement
+                    const response = await fetch("{{ route('paiement.initier') }}", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "X-CSRF-TOKEN": "{{ csrf_token() }}",
+                            "Accept": "application/json",
+                        },
+                        body: JSON.stringify({
+                            apartment_id: apartmentId,
+                            description: ''
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    if (!response.ok) {
+                        alert(data.message || "Erreur lors de l'initialisation");
+                        return;
+                    }
+
+                    // 2. Lance FedaPay
+                    FedaPay.init('#pay-now-btn', {
+                        public_key: "{{ config('services.fedapay.public_key') }}",
+                        transaction: {
+                            amount: 1500,
+                            description: 'Paiement pour appartement ' + apartmentId
+                        },
+                        customer: {
+                            email: "{{ auth()->user()->email }}",
+                            firstname: "{{ auth()->user()->name }}",
+                            phone_number: {
+                                number: "{{ auth()->user()->phone ?? '97000000' }}",
+                                country: 'bj'
+                            }
+                        },
+                        callback: async function(response) {
+                            // 3. Confirme le paiement
+                            await fetch("{{ route('paiement.confirmer') }}", {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                    "X-CSRF-TOKEN": "{{ csrf_token() }}",
+                                    "Accept": "application/json",
+                                },
+                                body: JSON.stringify({
+                                    paiement_id: data.paiement_id,
+                                    transaction_id: response.transaction.id
+                                })
+                            });
+
+                            // 4. Redirige vers la page de confirmation
+                            window.location.href = "/paiement/confirmation/" + data.paiement_id;
+                        }
+                    });
+
+                } catch (error) {
+                    alert("Erreur technique : " + error.message);
+                }
+            });
+        </script>
+
 
     </section>
 @endsection

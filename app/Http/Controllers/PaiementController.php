@@ -10,13 +10,15 @@ use Illuminate\Support\Facades\Mail;
 
 class PaiementController extends Controller
 {
-    public function lancer()
+    public function lancer(Request $request)
     {
         if (! auth()->check()) {
             return redirect()->route('login')->with('error', 'Veuillez vous connecter pour effectuer un paiement.');
         }
 
-        return view('paiement.lancer');
+        $apartmentId = $request->query('apartment_id');
+
+        return view('paiement.lancer', compact('apartmentId'));
     }
 
     public function initierPaiement(Request $request)
@@ -144,23 +146,24 @@ class PaiementController extends Controller
         ]);
     }
 
-    //Voir les paiments de user
+    // Voir les paiments de user
 
     public function mesPaiements()
-{
-    $paiements = \App\Models\Paiement::where('user_id', auth()->id())
-        ->orderByDesc('created_at')
-        ->get();
+    {
+        $paiements = \App\Models\Paiement::where('user_id', auth()->id())
+            ->orderByDesc('created_at')
+            ->get();
 
-    return view('paiement.mes_paiements', compact('paiements'));
-}
+        return view('paiement.mes_paiements', compact('paiements'));
+    }
 
-//Gestion paiment admin
+    // Gestion paiment admin
 
- public function index()
+    public function index()
     {
         // Récupérer les paiements par date décroissante
         $paiements = Paiement::orderBy('created_at', 'desc')->paginate(10);
+
         return view('admin.demandes.index', compact('paiements'));
     }
 

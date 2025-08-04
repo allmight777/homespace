@@ -42,7 +42,10 @@
                 @csrf
 
                 <div class="form-group mb-4">
+                   <p class="text-danger">Veuillez cliquer sur "Voir les étapes" pour mieux comprendre ou trouver l'ID de l'appartement souhaité.</p>
+
                     <div class="d-flex justify-content-between align-items-center">
+
                         <label for="apartment_id" class="form-label mb-1 fw-bold">
                             🏠 ID de l'appartement
                         </label>
@@ -68,17 +71,16 @@
                         <span>1 500 FCFA</span>
                     </div>
                 </div>
-                <div class="d-flex justify-content-between flex-wrap mt-4">
-                        <button id="pay-btn" type="button" class="btn btn-success w-100 w-md-50 ms-md-2 py-2">
-                        <i class="fas fa-credit-card me-2"></i> Payer (Double clic)
-                    </button>
-                      <br>
-                    <a href="{{ route('maison') }}" class="btn btn-primary w-100 w-md-50 me-md-2 py-2 mb-2 mb-md-0">
+                <div class="d-flex flex-column flex-md-row justify-content-between gap-3 mt-4">
+                    <a href="{{ route('maison') }}" class="btn btn-primary w-100 w-md-50 py-2">
                         Retour
                     </a>
 
-
+                    <button id="pay-btn" type="button" class="btn btn-success w-100 w-md-50 py-2">
+                        <i class="fas fa-credit-card me-2"></i> Payer (Double clic)
+                    </button>
                 </div>
+
 
 
             </form>
