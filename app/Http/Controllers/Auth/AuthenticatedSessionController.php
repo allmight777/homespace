@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,32 +21,27 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request): RedirectResponse
+    public function store(Request $request): RedirectResponse
     {
-        $request->authenticate();
+        $credentials = $request->only('email', 'password');
 
-        $user = $request->user();
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
 
-        // Vérifie si le compte est actif
-        if (! $user->isactif) {
-            // Déconnecte immédiatement l'utilisateur
-            auth()->logout();
+            $user = Auth::user();
 
-            return redirect()->route('login')->withErrors([
-                'email' => 'Votre compte est désactivé. Veuillez contacter l\'administrateur.',
-            ]);
+            if ($user->isadmin) {
+                return redirect()->intended(route('admin.dashboard'));
+            } else {
+                // redirige vers la page que l’utilisateur voulait avant de se connecter
+                return redirect()->intended(route('maison'))->with('success', 'Vous êtes connecté');
+
+            }
         }
 
-        $request->session()->regenerate();
-
-        if ($user->isadmin) {
-            // Admin actif → redirection vers dashboard
-            return redirect()->intended(route('admin.dashboard', absolute: false));
-        } else {
-            // Utilisateur actif non admin → redirection vers autre route avec message
-            return redirect()->route('users')
-                ->with('message', 'Vous êtes connecté');
-        }
+        return back()->withErrors([
+            'email' => 'Identifiants incorrects.',
+        ]);
     }
 
     /**

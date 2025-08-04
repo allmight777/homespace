@@ -41,70 +41,83 @@
                                     toute sérénité.</p>
 
                             </div>
-
                             <div class="search-container" data-aos="fade-up" data-aos-delay="300">
-                                <div class="search-header">
+                                <div class="search-header text-center mb-4">
                                     <h3>Lancez votre recherche de logement</h3>
                                     <p>Découvrez des milliers d’annonces vérifiées près des universités</p>
+
                                 </div>
 
+                                <div class="property-search-form">
+                                    <div class="row g-3">
 
-                                <form action="" class="property-search-form">
-                                    <div class="search-grid">
                                         <div class="search-field">
                                             <label for="search-location" class="field-label">Location</label>
-                                            <input type="text" id="search-location" name="location"
-                                                placeholder="Enter city or neighborhood" required="">
+                                            <input type="text" id="search-location" name="location" placeholder="Tapez la ville souhaitée"
+>
                                             <i class="bi bi-geo-alt field-icon"></i>
                                         </div>
 
-                                        <div class="search-field">
-                                            <label for="search-type" class="field-label">Property Type</label>
-                                            <select id="search-type" name="property_type" required="">
-                                                <option value="">All Types</option>
-                                                <option value="house">Single House</option>
-                                                <option value="apartment">Apartment</option>
-                                                <option value="villa">Villa</option>
-                                                <option value="commercial">Autres</option>
-                                            </select>
-                                            <i class="bi bi-building field-icon"></i>
+                                        <!-- Type de logement -->
+                                        <div class="col-md-4">
+                                            <div class="search-field position-relative">
+                                                <label for="search-type" class="field-label">Type de logement</label>
+                                                <select id="search-type" name="property_type" class="form-select">
+                                                    <option value="">Tous les types</option>
+                                                    <option value="house">Maison simple</option>
+                                                    <option value="apartment">Appartement</option>
+                                                    <option value="villa">Villa</option>
+                                                    <option value="commercial">Autres</option>
+                                                </select>
+                                                <i
+                                                    class="bi bi-building field-icon position-absolute end-0 top-50 translate-middle-y me-3"></i>
+                                            </div>
                                         </div>
 
-                                        <div class="search-field">
-                                            <label for="search-budget" class="field-label">Budget Range</label>
-                                            <select id="search-budget" name="price_range" required="">
-                                                <option value="">Any Price</option>
-                                        
-                                                <option value="300000-600000">5.000Fcfa - 15.000Fcfa</option>
-                                                <option value="600000-900000">15.000Fcfa - 30.000Fcfa</option>
-                                                <option value="900000-1500000"> > 30.000Fcfa</option>
-
-                                            </select>
-                                            <i class="bi bi-currency-dollar field-icon"></i>
+                                        <!-- Budget -->
+                                        <div class="col-md-4">
+                                            <div class="search-field position-relative">
+                                                <label for="search-budget" class="field-label">Budget</label>
+                                                <select id="search-budget" name="price_range" class="form-select">
+                                                    <option value="">Tous les budgets</option>
+                                                    <option value="5000-15000">5 000 FCFA - 15 000 FCFA</option>
+                                                    <option value="15000-30000">15 000 FCFA - 30 000 FCFA</option>
+                                                    <option value="30000+">Plus de 30 000 FCFA</option>
+                                                </select>
+                                                <i
+                                                    class="bi bi-currency-dollar field-icon position-absolute end-0 top-50 translate-middle-y me-3"></i>
+                                            </div>
                                         </div>
 
-                                        <div class="search-field">
-                                            <label for="search-rooms" class="field-label">Bedrooms</label>
-                                            <select id="search-rooms" name="bedrooms">
-                                                <option value="">Any</option>
-                                                <option value="1">1 Room</option>
-                                                <option value="2">2 Rooms</option>
-                                                <option value="3">3 Rooms</option>
-                                                <option value="4">4 Rooms</option>
-                                                <option value="5+">5+ Rooms</option>
-                                            </select>
-                                            <i class="bi bi-door-open field-icon"></i>
+                                        <!-- Chambres -->
+                                        <div class="col-md-4">
+                                            <div class="search-field position-relative">
+                                                <label for="search-rooms" class="field-label">Nombre de chambres</label>
+                                                <select id="search-rooms" name="bedrooms" class="form-select">
+                                                    <option value="">Toutes</option>
+                                                    <option value="1">1 chambre</option>
+                                                    <option value="2">2 chambres</option>
+                                                    <option value="3">3 chambres</option>
+                                                    <option value="4">4+ chambres</option>
+                                                </select>
+                                                <i
+                                                    class="bi bi-door-open field-icon position-absolute end-0 top-50 translate-middle-y me-3"></i>
+                                            </div>
                                         </div>
+
                                     </div>
 
-                                    <button type="submit" class="search-btn">
-                                        <i class="bi bi-search"></i>
-                                        <span><a href="{{ route('maison') }}" class="text-light">Trouver un logement</a>
-                                        </span>
+                                </div>
 
-                                    </button>
-                                </form>
+                                <div class="hero-content mt-4 text-center" data-aos="zoom-in" data-aos-delay="200">
+                                    <a href="{{ route('maison') }}"
+                                        class="btn btn-success search-btn d-inline-flex align-items-center justify-content-center px-4 py-2">
+                                        <i class="bi bi-search me-2"></i>
+                                        Trouver un logement
+                                    </a>
+                                </div>
                             </div>
+
 
                             <div class="achievement-grid" data-aos="fade-up" data-aos-delay="400">
                                 <div class="achievement-item">
@@ -157,10 +170,11 @@
                                             class="img-fluid">
                                     </div>
                                 </div>
-<br>
+                                <br>
                                 <div class="agent-card">
                                     <div class="agent-profile">
-                                        <img src="{{ asset('images/image_19.webp') }}" alt="House" class="agent-photo">
+                                        <img src="{{ asset('images/image_19.webp') }}" alt="House"
+                                            class="agent-photo">
                                         <div class="agent-info">
                                             <h4>FASSINOU Noel</h4>
                                             <p>Conseiller immobilier senior</p>
@@ -212,7 +226,8 @@
 
                                 <div class="agent-card">
                                     <div class="agent-profile">
-                                        <img src="{{ asset('images/image_15.webp') }}" alt="House" class="agent-photo">
+                                        <img src="{{ asset('images/image_15.webp') }}" alt="House"
+                                            class="agent-photo">
                                         <div class="agent-info">
                                             <h4>NADEGE Nadege</h4>
                                             <p>Conseiller</p>
@@ -361,7 +376,7 @@
                                 <li><i class="bi bi-check-circle-fill"></i> Filtres avancés</li>
                                 <li><i class="bi bi-check-circle-fill"></i> Visites virtuelles</li>
                             </ul>
-                            <a href="service-details.html" class="service-link">
+                            <a href="#" class="service-link">
                                 <span>Explorer maintenant</span>
                                 <i class="bi bi-arrow-up-right"></i>
                             </a>
@@ -386,7 +401,7 @@
                                 <li><i class="bi bi-check-circle-fill"></i> Rapports comparatifs</li>
                                 <li><i class="bi bi-check-circle-fill"></i> Conseils personnalisés</li>
                             </ul>
-                            <a href="service-details.html" class="service-link">
+                            <a href="#" class="service-link">
                                 <span>Obtenir une estimation</span>
                                 <i class="bi bi-arrow-up-right"></i>
                             </a>
@@ -416,7 +431,7 @@
                                 <li><i class="bi bi-check-circle-fill"></i> Gestion des contrats</li>
                                 <li><i class="bi bi-check-circle-fill"></i> Suivi des logements</li>
                             </ul>
-                            <a href="service-details.html" class="service-link">
+                            <a href="{{ route('maison') }}" class="service-link">
                                 <span>Commencer à louer</span>
                                 <i class="bi bi-arrow-up-right"></i>
                             </a>
@@ -441,7 +456,7 @@
                                 <li><i class="bi bi-check-circle-fill"></i> Suivi en temps réel</li>
                                 <li><i class="bi bi-check-circle-fill"></i> Support réactif</li>
                             </ul>
-                            <a href="service-details.html" class="service-link">
+                            <a href="{{ route('contact') }}" class="service-link">
                                 <span>En savoir plus</span>
                                 <i class="bi bi-arrow-up-right"></i>
                             </a>

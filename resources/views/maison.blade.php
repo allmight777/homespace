@@ -44,57 +44,28 @@
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
             <div class="search-bar mb-5" data-aos="fade-up" data-aos-delay="150">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="search-wrapper">
-                            <div class="row g-3">
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="mb-3">
-                                        <label for="location" class="form-label">Recherche</label>
-                                        <input type="text" id="location" name="location" class="form-control"
-                                            placeholder="Recherche via le champ👇" disabled>
-                                    </div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <form class="row g-3 align-items-center">
+
+                                <!-- Champ de recherche -->
+                                <div class="col-md-10 col-12">
+                                    <input type="text" id="searchInput" class="form-control form-control-lg shadow-sm"
+                                        placeholder="🔍 Rechercher un logement par ville, prix, type...">
                                 </div>
 
-                                <div class="col-lg-2 col-md-6">
-                                    <div class="search-field">
-                                        <label>Type</label>
-                                        <select class="form-select">
-                                            <option>Any Type</option>
+                                <!-- Bouton vert -->
 
-                                        </select>
-                                    </div>
+                                <div class="col-md-2 col-12">
+                                    <button type="submit"
+                                        class="btn btn-success btn-lg w-100 d-flex align-items-center justify-content-center gap-2">
+                                        <span>{{ $logements->total() }}</span>
+                                        <i class="bi bi-house-door-fill"></i>
+                                        <span>Logements</span>
+                                    </button>
                                 </div>
-                                <div class="col-lg-2 col-md-6">
-                                    <div class="search-field">
-                                        <label>Price</label>
-                                        <select class="form-select">
-                                            <option>Any Price</option>
-
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="search-field">
-                                        <label>Bedrooms</label>
-                                        <div class="bedroom-quick">
-                                            <button class="bed-btn" data-beds="any">Any</button>
-                                            <button class="bed-btn" data-beds="1">1+</button>
-                                            <button class="bed-btn" data-beds="2">2+</button>
-                                            <button class="bed-btn" data-beds="3">3+</button>
-                                            <button class="bed-btn" data-beds="4">4+</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-12">
-                                    <div class="search-field">
-                                        <label>&nbsp;</label>
-                                        <button class="btn btn-primary w-100 search-btn">
-                                            <i class="bi bi-house-door"></i> {{ $logements->total() }} Logements disponibles
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -102,19 +73,14 @@
 
 
 
-            <!-- Barre de recherche -->
-            <div class="search-bar mb-4">
-                <input type="text" id="searchInput" class="form-control"
-                    placeholder="Rechercher logements sur des critères...">
-            </div>
-
             <div class="properties-container">
                 <div class="properties-masonry view-masonry active" data-aos="fade-up" data-aos-delay="250">
                     <div class="row g-4" id="logementsContainer">
                         @foreach ($logements as $logement)
                             <div class="col-lg-4 col-md-6 property-item">
-                                <div class="property-item-inner">
-                                    <a href="#" class="property-link">
+                                <a href="{{ route('logements.show', $logement->id) }}"
+                                    class="text-decoration-none text-dark">
+                                    <div class="property-item-inner">
                                         <div class="property-image-wrapper">
                                             @php
                                                 $photos = $logement->photos;
@@ -132,59 +98,50 @@
                                             <img src="{{ $photoUrl }}" class="img-fluid" alt="{{ $logement->nom }}">
                                             <div class="property-status">
                                                 <span class="status-badge sale">{{ ucfirst($logement->statut) }}</span>
-
                                             </div>
                                         </div>
-                                    </a>
-                                    <div class="property-details">
-                                        <div class="property-header">
-                                            <div class="property-price">${{ number_format($logement->prix, 2) }}</div>
-                                            <div class="property-type">{{ $logement->type }}</div>
-                                        </div>
-                                        <div
-                                            class="bg-light border-start border-4 border-primary rounded p-3 shadow-sm mb-3">
-                                            <h5 class="mb-0 text-danger fw-bold">
-                                                🏠 ID de l'appartement :
-                                                <span class="badge bg-danger text-white ms-2 px-3 py-2">
-                                                    {{ $logement->id }}
-                                                </span>
-                                            </h5>
-                                        </div>
 
-                                        <h4 class="property-title">{{ $logement->nom }}</h4>
+                                        <div class="property-details">
+                                            <div class="property-header">
+                                                <div class="property-price">{{ number_format($logement->prix, 2) }} FCFA
+                                                </div>
+                                                <div class="property-type">{{ $logement->type }}</div>
+                                            </div>
 
-                                        <p class="property-address">
-                                            <i class="bi bi-geo-alt"></i> {{ $logement->localisation }}
-                                        </p>
-                                        <div class="property-specs">
-                                            <div class="spec-item">
-                                                <i class="bi bi-house-door"></i>
-                                                <span>{{ $logement->nombre_pieces ?? 'N/A' }} pièces</span>
-                                            </div>
-                                            <div class="spec-item">
-                                                <i class="bi bi-arrows-angle-expand"></i>
-                                                <span>{{ $logement->surface ?? '—' }} m²</span>
-                                            </div>
-                                            <div class="spec-item">
-                                                <i class="bi bi-wifi"></i>
-                                                <span>{{ $logement->wifi_inclus ? 'WiFi Inclus' : 'Pas de WiFi' }}</span>
+
+
+                                            <h4 class="property-title">{{ $logement->nom }}</h4>
+
+                                            <p class="property-address">
+                                                <i class="bi bi-geo-alt"></i> {{ $logement->localisation }}
+                                            </p>
+
+                                            <div class="property-specs">
+                                                <div class="spec-item">
+                                                    <i class="bi bi-house-door"></i>
+                                                    <span>{{ $logement->nombre_pieces ?? 'N/A' }} pièces</span>
+                                                </div>
+                                                <div class="spec-item">
+                                                    <i class="bi bi-arrows-angle-expand"></i>
+                                                    <span>{{ $logement->surface ?? '—' }} m²</span>
+                                                </div>
+                                                <div class="spec-item">
+                                                    <i class="bi bi-wifi"></i>
+                                                    <span>{{ $logement->wifi_inclus ? 'WiFi Inclus' : 'Pas de WiFi' }}</span>
+                                                </div>
                                             </div>
                                         </div>
-                                       
-                                        <br>
-                                        <a href="{{ route('logements.show', $logement->id) }}"
-                                            class="btn btn-success w-100 rounded py-2 text-white">
-                                            Informations
-                                        </a>
-
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         @endforeach
+
                     </div>
 
                     <!-- Message si pas de résultats -->
-                    <p id="noResults">Aucun logement ne correspond à vos critères. Ajustez votre recherche.</p>
+                    <p id="noResults">Aucun logement ne correspond à vos critères. Ajustez votre recherche.
+                        <br><br><br><br><br><br><br>
+                    </p>
                 </div>
             </div>
 
@@ -193,7 +150,7 @@
             </div>
 
         </div>
-        <br><br><br><br>
+
     </section>
 
     <script>

@@ -21,6 +21,7 @@
                         <tr>
                             <th class="px-4 py-2">ID</th>
                             <th class="px-4 py-2">Is actif</th>
+                            <th class="px-4 py-2">Is admin</th>
                             <th class="px-4 py-2">Nom</th>
                             <th class="px-4 py-2">Email</th>
                             <th class="px-4 py-2">Numero</th>
@@ -42,6 +43,20 @@
                                         <span
                                             style="background-color: #fee2e2; color: #991b1b; padding: 4px 8px; border-radius: 9999px; font-weight: 600; font-size: 0.875rem;">
                                             Non actif
+                                        </span>
+                                    @endif
+                                </td>
+
+                                <td class="px-4 py-2">
+                                    @if ($user->isadmin)
+                                        <span
+                                            style="background-color: #d1fae5; color: #065f46; padding: 4px 8px; border-radius: 9999px; font-weight: 600; font-size: 0.875rem;">
+                                            Admin
+                                        </span>
+                                    @else
+                                        <span
+                                            style="background-color: #fee2e2; color: #991b1b; padding: 4px 8px; border-radius: 9999px; font-weight: 600; font-size: 0.875rem;">
+                                            Non_admin
                                         </span>
                                     @endif
                                 </td>

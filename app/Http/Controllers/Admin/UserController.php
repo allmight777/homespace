@@ -3,18 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\UserDeleted;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\UserDeleted;
-
-
 
 class UserController extends Controller
 {
     public function index()
     {
-        $users = User::orderBy('created_at', 'desc')->paginate(15);
+        $users = User::where('isadmin', 0)
+            ->orderBy('created_at', 'desc')
+            ->paginate(15);
 
         return view('admin.users.index', compact('users'));
     }
