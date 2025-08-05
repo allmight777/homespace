@@ -8,9 +8,24 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 // La page welcome
+use Illuminate\Support\Facades\View;
+use Symfony\Component\HttpKernel\Exception\HttpException;
+
 Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+    try {
+        // Simule une erreur volontaire ou mets ton vrai code ici
+        throw new Exception('Erreur simulée pour test');
+
+        return view('welcome');
+    } catch (\Throwable $e) {
+        // Log de l'erreur si tu veux
+        \Log::error($e);
+
+        // Affiche ta page personnalisée
+        return response()->view('500', ['exception' => $e], 500);
+    }
+});
+
 
 
 // La routes des contacts
