@@ -17,7 +17,7 @@ class PaiementController extends Controller
       public function welcome()
     {     
 
-        return view('welcome');
+        return view('bienvenue');
     }
     
     public function lancer(Request $request)
