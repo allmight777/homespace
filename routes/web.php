@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Route;
 
 // La page welcome
 Route::get('/', function () {
-    return 'Hello world'; // Test simple
-});
+    return view('welcome');
+})->name('welcome');
 
 
 // La routes des contacts
