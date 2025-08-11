@@ -10,9 +10,23 @@ use App\Http\Controllers\DemandeLogementController;
 use Illuminate\Support\Facades\Route;
 
 // La page welcome
+use Illuminate\Support\Facades\View;
+use Symfony\Component\HttpKernel\Exception\HttpException;
+
+
+
 Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+    try {
+        // Ton code normal
+        return view('bienvenue');
+    } catch (\Throwable $exception) {
+        \Log::error($exception);
+        return response()->view('500', ['exception' => $exception], 500);
+    }
+});
+
+
+
 
 // La routes des contacts
 Route::get('/contacts', function () {

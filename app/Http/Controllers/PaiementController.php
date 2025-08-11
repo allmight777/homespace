@@ -10,6 +10,16 @@ use Illuminate\Support\Facades\Mail;
 
 class PaiementController extends Controller
 {
+
+
+    
+
+      public function welcome()
+    {     
+
+        return view('bienvenue');
+    }
+    
     public function lancer(Request $request)
     {
         if (! auth()->check()) {
