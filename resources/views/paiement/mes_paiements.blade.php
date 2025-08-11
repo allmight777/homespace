@@ -43,7 +43,7 @@
                             <td>
                                 {{ optional($paiement->apartment)->nom ?? 'Appartement inconnu' }}
                             </td>
-                            <td>{{ number_format($paiement->montant, 0, ',', ' ') }} FCFA</td>
+                            <td class="text-danger" >{{ number_format($paiement->montant, 0, ',', ' ') }} FCFA</td>
                             <td>{{ $paiement->description ?? '-' }}</td>
                             <td>{{ $paiement->created_at->format('d/m/Y H:i') }}</td>
                             <td>
@@ -52,7 +52,7 @@
                                         'approuvé' => 'success',
                                         'en_attente' => 'warning',
                                         'rejeté' => 'danger',
-                                        default => 'secondary',
+                                        default => 'success',
                                     };
                                 @endphp
                                 <span class="badge bg-{{ $statusClass }}">

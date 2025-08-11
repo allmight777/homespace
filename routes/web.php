@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\Admin\LogementController;
+use App\Http\Controllers\Admin\DemandeLogementAdminController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\MaisonController;
 use App\Http\Controllers\PaiementController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DemandeLogementController;
 use Illuminate\Support\Facades\Route;
 
 // La page welcome
@@ -67,6 +69,10 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::get('/paiements', [PaiementController::class, 'index'])->name('paiements.index');
     Route::post('/paiements/{paiement}/update-status', [PaiementController::class, 'updateStatus'])->name('paiements.updateStatus');
 
+    //route pour gestion des formulations dappartemnt
+
+     Route::resource('demandes-logements', DemandeLogementAdminController::class);
+
 });
 
 Route::middleware('auth')->group(function () {
@@ -95,6 +101,10 @@ Route::middleware('auth')->group(function () {
     // Suivi des demandes de l'utilisateurs
 
     Route::get('/mes-paiements', [PaiementController::class, 'mesPaiements'])->name('mes.paiements');
+
+    //Faire une demande d'appartement
+
+    Route::resource('demandes-logements', DemandeLogementController::class);
 });
 
 require __DIR__.'/auth.php';

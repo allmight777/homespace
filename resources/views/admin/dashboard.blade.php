@@ -9,7 +9,8 @@
         .header-title {
             font-weight: 700;
             font-size: 2rem;
-            color: #1D4ED8; /* Bleu Tailwind blue-700 */
+            color: #1D4ED8;
+            /* Bleu Tailwind blue-700 */
             margin-bottom: 1rem;
         }
 
@@ -17,11 +18,14 @@
             max-width: 900px;
             margin: 3rem auto;
             padding: 2rem;
-            background-color: #DBEAFE; /* Bleu clair */
-            border: 1px solid #3B82F6; /* Bleu plus vif */
+            background-color: #DBEAFE;
+            /* Bleu clair */
+            border: 1px solid #3B82F6;
+            /* Bleu plus vif */
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-            color: #1E3A8A; /* Bleu foncé */
+            color: #1E3A8A;
+            /* Bleu foncé */
             font-family: Arial, sans-serif;
         }
 
@@ -45,7 +49,8 @@
         }
 
         .btn-manage {
-            background-color: #2563EB; /* blue-600 */
+            background-color: #2563EB;
+            /* blue-600 */
             color: white;
             padding: 1rem 2rem;
             font-weight: 600;
@@ -58,7 +63,8 @@
         }
 
         .btn-manage:hover {
-            background-color: #1D4ED8; /* blue-700 */
+            background-color: #1D4ED8;
+            /* blue-700 */
             box-shadow: 0 6px 15px rgba(29, 78, 216, 0.7);
             color: #fcfdff;
         }
@@ -95,6 +101,11 @@
             <a href="{{ route('admin.paiements.index') }}" class="btn-manage">
                 Gérer les demandes
             </a>
+
+            <a href="{{ route('admin.demandes-logements.index') }}" class="btn-manage">
+                Gérer les formulations
+            </a>
+
         </div>
     </div>
 </x-app-layout>

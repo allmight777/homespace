@@ -89,31 +89,24 @@
 
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="{{ route('welcome') }}" class="active">Home</a></li>
+
                     <li><a href="{{ route('maison') }}">Appartements</a></li>
-                    <li><a href="{{ route('service') }}">Services</a></li>
-                    <li><a href="{{ route('agent') }}">Agents</a></li>
+                    <li><a href="{{ route('demandes-logements.index') }}">Fais une demande</a></li>
                     <li><a href="{{ route('login') }}">Connexion</a></li>
                     <li><a href="{{ route('register') }}">Inscription</a></li>
                     <li class="dropdown"><a href="#"><span>More Pages</span> <i
                                 class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
-
+                            <li><a href="{{ route('agent') }}">Agents</a></li>
+                            <li><a href="{{ route('service') }}">Services</a></li>
                             <li><a href="{{ route('terms') }}">Terms</a></li>
                             <li><a href="{{ route('privacy') }}">Privacy</a></li>
                             <li><a href="{{ route('abouts') }}">About</a></li>
                         </ul>
                     </li>
+
                     <li><a href="{{ route('contact') }}">Contact</a></li>
-                    {{--   <li>
-                        <form method="POST" action="{{ route('logout') }}" style="display: inline;">
-                            @csrf
-                            <button type="submit" class="btn btn-danger btn-sm"
-                                style="padding: 0.25rem 0.75rem; font-size: 1rem;">
-                                Logout
-                            </button>
-                        </form>
-                    </li>  --}}
+
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
@@ -171,7 +164,7 @@
 
                 <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
                     <h4>Contact Us</h4>
-                 
+
                     <p>Cadjehoun, Gbegamey</p>
                     <p>Bénin</p>
                     <p class="mt-4"><strong>Phone:</strong> <span>+229 01 94849958</span></p>

@@ -94,19 +94,24 @@
                 <ul>
 
                     <li><a href="{{ route('maison') }}">Appartements</a></li>
-
-                    <li><a href="{{ route('mes.paiements') }}">Mes demandes</a></li>
+                    <li><a href="{{ route('demandes-logements.index') }}">Fais une demande</a></li>
+                    <li><a href="{{ route('mes.paiements') }}">Mes paiements</a></li>
                     <li><a href="{{ route('agent') }}">Agents</a></li>
 
                     <li>
-                        <form method="POST" action="{{ route('logout') }}" style="display: inline;">
+                        <form id="logout-form" method="POST" action="{{ route('logout') }}" style="display: none;">
                             @csrf
-                            <button type="submit" class="btn btn-danger btn-sm"
-                                style="padding: 0.25rem 0.75rem; font-size: 1rem;">
-                                Logout
-                            </button>
                         </form>
+                        <a href="#" id="logout-link">Déconnexion</a>
                     </li>
+
+                    <script>
+                        document.getElementById('logout-link').addEventListener('click', function(event) {
+                            event.preventDefault();
+                            document.getElementById('logout-form').submit();
+                        });
+                    </script>
+
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
@@ -186,8 +191,7 @@
     <!-- Bootstrap Bundle (JS + Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- PHP Email Form Validation (ce script est souvent local, pas sur CDN) -->
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+
 
     <!-- AOS (Animate On Scroll) -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>

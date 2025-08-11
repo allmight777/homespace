@@ -53,8 +53,8 @@
 
                                         <div class="search-field">
                                             <label for="search-location" class="field-label">Location</label>
-                                            <input type="text" id="search-location" name="location" placeholder="Tapez la ville souhaitée"
->
+                                            <input type="text" id="search-location" name="location"
+                                                placeholder="Tapez la ville souhaitée">
                                             <i class="bi bi-geo-alt field-icon"></i>
                                         </div>
 
@@ -109,13 +109,15 @@
 
                                 </div>
 
-                                <div class="hero-content mt-4 text-center" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="hero-content mt-4 text-center" data-aos="zoom-in" data-aos-delay="200"
+                                    onclick="window.location='{{ route('maison') }}'" style="cursor: pointer;">
                                     <a href="{{ route('maison') }}"
                                         class="btn btn-success search-btn d-inline-flex align-items-center justify-content-center px-4 py-2">
                                         <i class="bi bi-search me-2"></i>
                                         Trouver un logement
                                     </a>
                                 </div>
+
                             </div>
 
 
@@ -222,32 +224,8 @@
                                     </button>
                                 </div>
 
-                                <!-- le 3eme argent -->
 
-                                <div class="agent-card">
-                                    <div class="agent-profile">
-                                        <img src="{{ asset('images/image_15.webp') }}" alt="House"
-                                            class="agent-photo">
-                                        <div class="agent-info">
-                                            <h4>NADEGE Nadege</h4>
-                                            <p>Conseiller</p>
 
-                                            <div class="agent-rating">
-                                                <div class="stars">
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                </div>
-                                                <span class="rating-text">5.0 (97 reviews)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button class="contact-agent-btn">
-                                        <i class="bi bi-chat-dots"></i>
-                                    </button>
-                                </div>
                             </div>
                         </div>
                     </div><!-- End Hero Visual -->

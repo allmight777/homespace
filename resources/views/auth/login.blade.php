@@ -111,7 +111,7 @@
                     </a>
 
                     <x-primary-button class="btn btn-primary btn-primary-custom">
-                        {{ __('Se connecter') }}
+                        {{ __('Connecter') }}
                     </x-primary-button>
                 </div>
             </form>

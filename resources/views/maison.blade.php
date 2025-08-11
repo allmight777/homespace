@@ -26,6 +26,10 @@
             color: #dc3545;
             margin-top: 2rem;
         }
+
+        .property-item {
+            margin-right: 30px;
+        }
     </style>
 
     <div class="page-title light-background">
@@ -72,12 +76,11 @@
             </div>
 
 
-
             <div class="properties-container">
                 <div class="properties-masonry view-masonry active" data-aos="fade-up" data-aos-delay="250">
                     <div class="row g-4" id="logementsContainer">
                         @foreach ($logements as $logement)
-                            <div class="col-lg-4 col-md-6 property-item">
+                            <div class="col-lg-4 col-md-8 property-item">
                                 <a href="{{ route('logements.show', $logement->id) }}"
                                     class="text-decoration-none text-dark">
                                     <div class="property-item-inner">
@@ -150,7 +153,7 @@
             </div>
 
         </div>
-
+        <br><br><br><br><br><br><br><br>
     </section>
 
     <script>
