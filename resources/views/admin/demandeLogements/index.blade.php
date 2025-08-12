@@ -163,12 +163,12 @@
                                 <span class="badge badge-yellow">En attente</span>
                             @endif
                         </td>
-                       <td class="action-links">
-    <a href="{{ route('admin.demandes-logements.edit', $demande) }}"
-       class="btn btn-yellow text-light" style="text-decoration: none;">Modifier</a>
-    <a href="{{ route('admin.demandes-logements.show', $demande) }}"
-       class="btn btn-gray text-light" style="text-decoration: none;">Voir</a>
-</td>
+                        <td class="action-links">
+                            <a href="{{ route('admin.demandes-logements.edit', $demande) }}"
+                                class="btn btn-yellow text-light" style="text-decoration: none;">Modifier</a>
+                            <a href="{{ route('admin.demandes-logements.show', $demande) }}"
+                                class="btn btn-gray text-light" style="text-decoration: none;">Voir</a>
+                        </td>
 
 
                     </tr>

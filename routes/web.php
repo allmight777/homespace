@@ -1,32 +1,18 @@
 <?php
 
-use App\Http\Controllers\Admin\LogementController;
 use App\Http\Controllers\Admin\DemandeLogementAdminController;
+use App\Http\Controllers\Admin\LogementController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\DemandeLogementController;
 use App\Http\Controllers\MaisonController;
 use App\Http\Controllers\PaiementController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\DemandeLogementController;
 use Illuminate\Support\Facades\Route;
 
 // La page welcome
-use Illuminate\Support\Facades\View;
-use Symfony\Component\HttpKernel\Exception\HttpException;
-
-
-
 Route::get('/', function () {
-    try {
-        // Ton code normal
-        return view('bienvenue');
-    } catch (\Throwable $exception) {
-        \Log::error($exception);
-        return response()->view('500', ['exception' => $exception], 500);
-    }
-});
-
-
-
+    return view('welcome');
+})->name('welcome');
 
 // La routes des contacts
 Route::get('/contacts', function () {
@@ -58,10 +44,13 @@ Route::get('/privacy', function () {
     return view('contacts.privacy');
 })->name('privacy');
 
+//remerciement apres envoie de email
+Route::get('/thanks', function () {
+    return view('contacts.thanks');
+})->name('thanks');
+
 // La route pour les proprietes
 Route::get('/logements', [MaisonController::class, 'index'])->name('maison');
-// show details
-Route::get('/logements/{id}', [MaisonController::class, 'show'])->name('logements.show');
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
@@ -83,9 +72,9 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::get('/paiements', [PaiementController::class, 'index'])->name('paiements.index');
     Route::post('/paiements/{paiement}/update-status', [PaiementController::class, 'updateStatus'])->name('paiements.updateStatus');
 
-    //route pour gestion des formulations dappartemnt
+    // route pour gestion des formulations dappartemnt
 
-     Route::resource('demandes-logements', DemandeLogementAdminController::class);
+    Route::resource('demandes-logements', DemandeLogementAdminController::class);
 
 });
 
@@ -116,7 +105,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/mes-paiements', [PaiementController::class, 'mesPaiements'])->name('mes.paiements');
 
-    //Faire une demande d'appartement
+    // Faire une demande d'appartement
 
     Route::resource('demandes-logements', DemandeLogementController::class);
 });

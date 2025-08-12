@@ -193,6 +193,7 @@
             </div>
         @else
             <p>Aucune demande trouvée.</p>
+            <br><br><br><br>
         @endif
     </div>
     <br><br><br><br><br><br><br>

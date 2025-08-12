@@ -171,8 +171,7 @@
                     <h4>Contact Us</h4>
                     <p>Cadjehoun, Gbegamey</p>
                     <p>Bénin</p>
-                    <p class="mt-4"><strong>Phone:</strong> <span>+229 01 94849958</span></p>
-                    <p><strong>Email:</strong> <span>agoliganange15@gmail.com</span></p>
+                 
                 </div>
 
             </div>

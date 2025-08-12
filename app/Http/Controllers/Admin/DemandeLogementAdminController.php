@@ -27,7 +27,7 @@ class DemandeLogementAdminController extends Controller
 
     public function update(Request $request, $id)
     {
-        $demande_logement = DemandeLogement::findOrFail($id); // récupère la demande existante
+        $demande_logement = DemandeLogement::findOrFail($id);
 
         $data = $request->all();
 
@@ -37,7 +37,7 @@ class DemandeLogementAdminController extends Controller
             $demande_logement->reponse_admin = $data['reponse_admin'] ?? null;
         }
 
-        $demande_logement->save(); // ici c'est un update, pas un insert
+        $demande_logement->save(); 
 
         return redirect()->route('admin.demandes-logements.index')->with('success', 'Statut mis à jour avec succès.');
     }

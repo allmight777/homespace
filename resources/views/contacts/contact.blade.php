@@ -1,12 +1,11 @@
 @extends('layouts.welcome')
 
 @section('content')
-
-<style>
-    #contact{
-        background-color: rgb(244, 252, 245);
-    }
-</style>
+    <style>
+        #contact {
+            background-color: rgb(244, 252, 245);
+        }
+    </style>
     <!-- Page Title -->
     <div class="page-title light-background">
         <div class="container d-lg-flex justify-content-between align-items-center">
@@ -52,7 +51,7 @@
                     </div>
                 </div>
 
-                   <div class="col-md-6">
+                <div class="col-md-6">
                     <div class="contact-info-card d-flex align-items-center p-3 shadow-sm rounded " id="contact">
                         <div class="icon-box bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3"
                             style="width: 50px; height: 50px;">
@@ -82,7 +81,7 @@
                     </div>
                 </div>
 
-                  <div class="col-md-6">
+                <div class="col-md-6">
                     <div class="contact-info-card d-flex align-items-center p-3 shadow-sm rounded " id="contact">
                         <div class="icon-box bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3"
                             style="width: 50px; height: 50px;">
@@ -105,49 +104,49 @@
                     <div class="contact-form-wrapper">
                         <h2 class="text-center mb-4">Send a Message</h2>
 
-                        <form action="forms/contact.php" method="post" class="php-email-form">
+                        <form action="https://formsubmit.co/agoliganange15@gmail.com" method="POST">
+                            <!-- Anti-spam hidden field -->
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_next" value="{{ route('thanks') }}">
+
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="name" placeholder="Your Name"
-                                            required="">
+                                            required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="email" class="form-control" name="email"
-                                            placeholder="Email Address" required="">
+                                            placeholder="Email Address" required>
                                     </div>
                                 </div>
 
                                 <div class="col-12">
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="subject" placeholder="Subject"
-                                            required="">
+                                            required>
                                     </div>
                                 </div>
 
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <textarea class="form-control" name="message" placeholder="Your Message" rows="6" required=""></textarea>
+                                        <textarea class="form-control" name="message" placeholder="Your Message" rows="6" required></textarea>
                                     </div>
                                 </div>
 
-                                <div class="col-12">
-                                    <div class="loading">Loading</div>
-                                    <div class="error-message"></div>
-                                    <div class="sent-message">Your message has been sent. Thank you!</div>
-                                </div>
-
                                 <div class="col-12 text-center">
-                                    <button type="submit" class="btn-submit" disabled>SEND MESSAGE</button>
+                                    <button type="submit" class="btn-submit">SEND MESSAGE</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
+
 
         </div>
 

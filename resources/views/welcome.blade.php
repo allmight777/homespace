@@ -109,14 +109,19 @@
 
                                 </div>
 
-                                <div class="hero-content mt-4 text-center" data-aos="zoom-in" data-aos-delay="200"
-                                    onclick="window.location='{{ route('maison') }}'" style="cursor: pointer;">
-                                    <a href="{{ route('maison') }}"
-                                        class="btn btn-success search-btn d-inline-flex align-items-center justify-content-center px-4 py-2">
-                                        <i class="bi bi-search me-2"></i>
-                                        Trouver un logement
-                                    </a>
-                                </div>
+                                <a href="{{ route('maison') }}" style="text-decoration: none;">
+                                    <div class="hero-content mt-4 text-center" data-aos="zoom-in" data-aos-delay="200"
+                                        style="cursor: pointer;">
+
+                                        <div
+                                            class="btn btn-success search-btn d-inline-flex align-items-center justify-content-center px-4 py-2">
+                                            <i class="bi bi-search me-2"></i>
+                                            Trouver un logement
+                                        </div>
+
+                                    </div>
+                                </a>
+
 
                             </div>
 
@@ -131,14 +136,14 @@
                                 </div>
                                 <div class="achievement-item">
                                     <div class="achievement-number">
-                                        <span data-purecounter-start="0" data-purecounter-end="89"
+                                        <span data-purecounter-start="0" data-purecounter-end="10"
                                             data-purecounter-duration="1" class="purecounter"></span>+
                                     </div>
                                     <span class="achievement-text">Expert Agents</span>
                                 </div>
                                 <div class="achievement-item">
                                     <div class="achievement-number">
-                                        <span data-purecounter-start="0" data-purecounter-end="96"
+                                        <span data-purecounter-start="0" data-purecounter-end="86"
                                             data-purecounter-duration="1" class="purecounter"></span>%
                                     </div>
                                     <span class="achievement-text">Success Rate</span>
@@ -154,7 +159,7 @@
                                     <img src="{{ asset('images/image_1.webp') }}" alt="Featured Property"
                                         class="img-fluid">
                                     <div class="property-info">
-                                        <div class="property-price">$925,000</div>
+                                        <div class="property-price">25.000.000 FCFA</div>
                                         <div class="property-details">
                                             <span><i class="bi bi-geo-alt"></i> Downtown District</span>
                                             <span><i class="bi bi-house"></i> 4 Bed, 3 Bath</span>
@@ -186,10 +191,9 @@
                                                     <i class="bi bi-star-fill"></i>
                                                     <i class="bi bi-star-fill"></i>
                                                     <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
+
                                                 </div>
-                                                <span class="rating-text">5.0 (94 reviews)</span>
+                                                <span class="rating-text">4.0 (19 reviews)</span>
                                             </div>
                                         </div>
                                     </div>
@@ -215,7 +219,7 @@
                                                     <i class="bi bi-star-fill"></i>
                                                     <i class="bi bi-star-fill"></i>
                                                 </div>
-                                                <span class="rating-text">5.0 (97 reviews)</span>
+                                                <span class="rating-text">4.3 (9 reviews)</span>
                                             </div>
                                         </div>
                                     </div>
@@ -466,7 +470,7 @@
 
         <!-- Titre de la section -->
         <div id="ca-titre" class="container-fluid section-title" data-aos="fade-up">
-            <h2>Nos Agents Recommandés</h2>
+            <h2>Nos Agents</h2>
             <p>Des experts de confiance pour vous aider à trouver le logement parfait près de votre campus</p>
         </div><!-- Fin du titre -->
 
@@ -503,7 +507,7 @@
                                 </div>
                                 <div class="expertise-tags">
                                     <span class="tag">Logements étudiants</span>
-                                    <span class="tag">Studios & Apparts</span>
+
                                 </div>
                                 <a href="{{ route('agent') }}" class="view-profile">Voir le profil</a>
                             </div>
@@ -532,7 +536,7 @@
                             </div>
                             <div class="agent-details">
                                 <h4>AGOLIGAN Ange</h4>
-                                <span class="position">Spécialiste Immobilier Commercial</span>
+                                <span class="position">Spécialiste Immobilier</span>
                                 <div class="location-info">
                                     <i class="bi bi-geo-alt-fill"></i>
                                     <span>Cotonou</span>
@@ -552,13 +556,13 @@
                     <div class="featured-agent">
                         <div class="agent-wrapper">
                             <div class="agent-photo">
-                                <img src="assets/img/real-estate/agent-5.webp" alt="Agent Vedette" class="img-fluid">
+                                <img src="{{ asset('images/image_24.webp') }}" alt="Agent Vedette" class="img-fluid">
                                 <div class="overlay-info">
                                     <div class="contact-actions">
-                                        <a href="tel:+2290194849958" class="contact-btn phone" title="Appeler">
+                                        <a href="tel:+2290152999984" class="contact-btn phone" title="Appeler">
                                             <i class="bi bi-telephone-fill"></i>
                                         </a>
-                                        <a href="mailto:agoliganange15@gmail.com" class="contact-btn email"
+                                        <a href="mailto:arneaudkoussiemehoun@gmail.com" class="contact-btn email"
                                             title="Envoyer un email">
                                             <i class="bi bi-envelope-fill"></i>
                                         </a>
@@ -567,8 +571,8 @@
                                 <span class="achievement-badge rising">Étoile montante</span>
                             </div>
                             <div class="agent-details">
-                                <h4>Sophia Rivera</h4>
-                                <span class="position">Spécialiste primo-accédants</span>
+                                <h4>KOUSSIEMEHOUN Arneaud</h4>
+                                <span class="position">Spécialiste Immobilier</span>
                                 <div class="location-info">
                                     <i class="bi bi-geo-alt-fill"></i>
                                     <span>Porto-Novo</span>
@@ -577,7 +581,7 @@
                                     <span class="tag">Studios</span>
                                     <span class="tag">Résidences partagées</span>
                                 </div>
-                                <a href="agent-profile.html" class="view-profile">Voir le profil</a>
+                                <a href="{{ route('agent') }}" class="view-profile">Voir le profil</a>
                             </div>
                         </div>
                     </div>

@@ -81,23 +81,23 @@
                 <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="agent-card">
                         <div class="agent-image">
-                            <img src="{{ asset('images/image_12.webp') }}" alt="Agent" class="img-fluid">
+                            <img src="{{ asset('images/image_24.webp') }}" alt="Agent" class="img-fluid">
                             <div class="badge-overlay">
                                 <span class="top-seller-badge">Top Seller</span>
                             </div>
                         </div>
                         <div class="agent-info">
-                            <h4>AGOLIGAN T. Ange</h4>
-                            <span class="role">Senior Property Advisor</span>
-                            <p class="location"><i class="bi bi-geo-alt"></i>Cadjehoun</p>
+                            <h4>KOUSSIEMEHOUN Arneaud</h4>
+                            <span class="role">Advisor</span>
+                            <p class="location"><i class="bi bi-geo-alt"></i>Porto-novo</p>
                             <div class="specialties">
-                                <span class="specialty-tag">Luxury Homes</span>
-                                <span class="specialty-tag">Condos</span>
+
+                                <span class="specialty-tag">Home</span>
                             </div>
                             <div class="contact-links">
-                                <a href="tel:+2290194849958"><i class="bi bi-telephone"></i></a>
-                                <a href="mailto:agoliganange15@gmail.com"><i class="bi bi-envelope"></i></a>
-                                <a href="https://wa.me/94849958?text=Bonjour%2C%20je%20suis%20intéressé(e)%20par%20le%20logement."
+                                <a href="tel:+2290152999984"><i class="bi bi-telephone"></i></a>
+                                <a href="mailto:arneaudkoussiemehoun@gmail.com"><i class="bi bi-envelope"></i></a>
+                                <a href="https://wa.me/52999984?text=Bonjour%2C%20je%20suis%20intéressé(e)%20par%20le%20logement."
                                     target="_blank"><i class="bi bi-whatsapp"></i></a>
                                 <!-- <a href="#"><i class="bi bi-linkedin"></i></a> -->
                             </div>
@@ -109,7 +109,7 @@
                 <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="agent-card">
                         <div class="agent-image">
-                            <img src="{{ asset('images/image_20.webp') }}" alt="Agent" class="img-fluid">
+                            <img src="{{ asset('images/image_24.webp') }}" alt="Agent" class="img-fluid">
                             <div class="badge-overlay">
                                 <span class="top-seller-badge">Top Seller</span>
                             </div>
