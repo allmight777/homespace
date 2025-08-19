@@ -14,6 +14,11 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+// La page de documentation
+Route::get('/documentation', function () {
+    return view('documentation');
+})->name('documentation');
+
 // La routes des contacts
 Route::get('/contacts', function () {
     return view('contacts.contact');
@@ -44,7 +49,7 @@ Route::get('/privacy', function () {
     return view('contacts.privacy');
 })->name('privacy');
 
-//remerciement apres envoie de email
+// remerciement apres envoie de email
 Route::get('/thanks', function () {
     return view('contacts.thanks');
 })->name('thanks');

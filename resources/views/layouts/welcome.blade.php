@@ -91,6 +91,7 @@
                 <ul>
 
                     <li><a href="{{ route('maison') }}">Appartements</a></li>
+                    <li><a href="{{ route('mes.paiements') }}">Mes paiements</a></li>
                     <li><a href="{{ route('demandes-logements.index') }}">Fais une demande</a></li>
                     <li><a href="{{ route('login') }}">Connexion</a></li>
                     <li><a href="{{ route('register') }}">Inscription</a></li>
@@ -125,54 +126,54 @@
 
     <footer id="footer" class="footer accent-background">
 
-        <div class="container footer-top">
-            <div class="row gy-4">
-                <div class="col-lg-5 col-md-12 footer-about">
-                    <a href="{{ route('welcome') }}" class="logo d-flex align-items-center">
-                        <span class="sitename">HomeSpace</span>
-                    </a>
-                    <p>Découvrez des opportunités uniques adaptées à vos besoins. Nos experts vous accompagnent pour
-                        trouver le logement idéal rapidement et en toute confiance.</p>
+    <div class="container footer-top">
+        <div class="row gy-4">
 
-                    <div class="social-links d-flex mt-4">
-                        <a href=""><i class="bi bi-twitter-x"></i></a>
-                        <a href=""><i class="bi bi-facebook"></i></a>
-                        <a href=""><i class="bi bi-instagram"></i></a>
-                        <a href=""><i class="bi bi-linkedin"></i></a>
-                    </div>
+            <div class="col-lg-5 col-md-12 footer-about">
+                <a href="{{ route('welcome') }}" class="logo d-flex align-items-center">
+                    <span class="sitename">HomeSpace</span>
+                </a>
+                <p>Découvrez des opportunités uniques adaptées à vos besoins. Nos experts vous accompagnent pour
+                    trouver le logement idéal rapidement et en toute confiance.</p>
+
+                <div class="social-links d-flex mt-4">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
                 </div>
-
-                <div class="col-lg-2 col-6 footer-links">
-                    <h4>Useful Links</h4>
-                    <ul>
-                        <li><a href="{{ route('welcome') }}">Home</a></li>
-                        <li><a href="{{ route('contact') }}">About us</a></li>
-                        <li><a href="{{ route('service') }}">Services</a></li>
-                        <li><a href="{{ route('terms') }}">Terms of service</a></li>
-                        <li><a href="{{ route('privacy') }}">Privacy policy</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-2 col-6 footer-links">
-                    <h4>Our Services</h4>
-                    <ul>
-                        <li><a href="{{ route('login') }}">Connexion</a></li>
-                        <li><a href="{{ route('register') }}">Inscription</a></li>
-
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-                    <h4>Contact Us</h4>
-
-                    <p>Cadjehoun, Gbegamey</p>
-                    <p>Bénin</p>
-
-                </div>
-
             </div>
+
+            <div class="col-lg-2 col-6 footer-links">
+                <h4>Liens utiles</h4>
+                <ul>
+                    <li><a href="{{ route('welcome') }}">Accueil</a></li>
+                    <li><a href="{{ route('contact') }}">À propos</a></li>
+                    <li><a href="{{ route('service') }}">Services</a></li>
+                    <li><a href="{{ route('terms') }}">Conditions d'utilisation</a></li>
+                    <li><a href="{{ route('privacy') }}">Politique de confidentialité</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-6 footer-links">
+                <h4>Nos services</h4>
+                <ul>
+                    <li><a href="{{ route('login') }}">Connexion</a></li>
+                    <li><a href="{{ route('register') }}">Inscription</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                <h4>Contactez-nous</h4>
+                <p>Cadjehoun, Gbegamey</p>
+                <p>Bénin</p>
+                <p>+229 0194849958</p>
+            </div>
+
         </div>
-    </footer>
+    </div>
+</footer>
+
 
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i

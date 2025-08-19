@@ -18,6 +18,31 @@
             color: white;
             margin: 0;
         }
+
+        .doc-link {
+            text-decoration: none;
+        }
+
+        #label {
+            display: inline-flex;
+            align-items: center;
+            background-color: #3949ab;
+
+            color: white;
+            padding: 10px 18px;
+            border-radius: 28px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            gap: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-label:hover {
+            background-color: #303f9f;
+            text-decoration: none;
+            color: white;
+        }
     </style>
     <!-- Hero Section -->
     <section id="hero" class="hero section">
@@ -33,8 +58,16 @@
                             <div class="content-header">
                                 <span class="hero-label">
                                     <i class="bi bi-house-heart"></i>
-                                    Dream Homes Await
+                                    Les logements de vos rêves
                                 </span>
+
+                                <a href="{{ route('documentation') }}" class="doc-link">
+                                    <span class="hero-label" id="label">
+                                        <i class="bi bi-file-earmark-text"></i>
+                                        Accéder à la documentation
+                                    </span>
+                                </a>
+
                                 <h1>Trouvez le logement idéal près de votre université</h1>
                                 <p>Recherchez facilement un logement étudiant parmi des annonces vérifiées. Gagnez du temps
                                     et bénéficiez de l'accompagnement de propriétaires de confiance pour une installation en
@@ -132,21 +165,21 @@
                                         <span data-purecounter-start="0" data-purecounter-end="1250"
                                             data-purecounter-duration="1" class="purecounter"></span>+
                                     </div>
-                                    <span class="achievement-text">Active Listings</span>
+                                    <span class="achievement-text">Annonces actives</span>
                                 </div>
                                 <div class="achievement-item">
                                     <div class="achievement-number">
                                         <span data-purecounter-start="0" data-purecounter-end="10"
                                             data-purecounter-duration="1" class="purecounter"></span>+
                                     </div>
-                                    <span class="achievement-text">Expert Agents</span>
+                                    <span class="achievement-text">Agents experts</span>
                                 </div>
                                 <div class="achievement-item">
                                     <div class="achievement-number">
                                         <span data-purecounter-start="0" data-purecounter-end="86"
                                             data-purecounter-duration="1" class="purecounter"></span>%
                                     </div>
-                                    <span class="achievement-text">Success Rate</span>
+                                    <span class="achievement-text">Taux de réussite</span>
                                 </div>
                             </div>
                         </div>
@@ -161,8 +194,9 @@
                                     <div class="property-info">
                                         <div class="property-price">25.000.000 FCFA</div>
                                         <div class="property-details">
-                                            <span><i class="bi bi-geo-alt"></i> Downtown District</span>
-                                            <span><i class="bi bi-house"></i> 4 Bed, 3 Bath</span>
+                                            <span><i class="bi bi-geo-alt"></i> Centre-ville</span>
+                                            <span><i class="bi bi-house"></i> 4 chambres, 3 salles de bain</span>
+
                                         </div>
                                     </div>
                                 </div>
@@ -184,7 +218,7 @@
                                             class="agent-photo">
                                         <div class="agent-info">
                                             <h4>FASSINOU Noel</h4>
-                                            <p>Conseiller immobilier senior</p>
+                                            <p>Conseiller immobilier</p>
 
                                             <div class="agent-rating">
                                                 <div class="stars">
@@ -193,7 +227,7 @@
                                                     <i class="bi bi-star-fill"></i>
 
                                                 </div>
-                                                <span class="rating-text">4.0 (19 reviews)</span>
+                                                <span class="rating-text">4.0 (19 Avis des clients)</span>
                                             </div>
                                         </div>
                                     </div>
@@ -209,7 +243,7 @@
                                         <img src="{{ asset('images/image_3.webp') }}" alt="House" class="agent-photo">
                                         <div class="agent-info">
                                             <h4>TOMETIN Fréjus</h4>
-                                            <p>Conseiller</p>
+                                            <p>Conseiller immobilier</p>
 
                                             <div class="agent-rating">
                                                 <div class="stars">
@@ -219,7 +253,7 @@
                                                     <i class="bi bi-star-fill"></i>
                                                     <i class="bi bi-star-fill"></i>
                                                 </div>
-                                                <span class="rating-text">4.3 (9 reviews)</span>
+                                                <span class="rating-text">4.3 (9 Avis des clients)</span>
                                             </div>
                                         </div>
                                     </div>
@@ -500,7 +534,7 @@
                             </div>
                             <div class="agent-details">
                                 <h4>FASSINOU Noel</h4>
-                                <span class="position">Conseiller Immobilier Premium</span>
+                                <span class="position">Conseiller Immobilier</span>
                                 <div class="location-info">
                                     <i class="bi bi-geo-alt-fill"></i>
                                     <span>Cadjèhoun</span>

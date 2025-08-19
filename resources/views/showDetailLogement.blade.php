@@ -271,7 +271,7 @@
                                     <a href="{{ route('mes.paiements') }}"
                                         class="btn btn-warning text-white w-100 d-flex justify-content-center align-items-center gap-2 mt-2 mt-md-0">
                                         <i class="bi bi-file-text-fill"></i>
-                                        Suivre mes demandes
+                                        Suivre mes paiements
                                     </a>
                                 </div>
 
