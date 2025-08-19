@@ -71,7 +71,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
     // route ressource pour gérer les logements
     Route::resource('logements', LogementController::class);
-    Route::get('admin/logements/{logement}', [LogementController::class, 'show'])->name('logements.show');
+    Route::get('admin/logements/{logement}', [LogementController::class, 'show'])->name('logements.showadmin');
 
     // route pour gestion des demandes
     Route::get('/paiements', [PaiementController::class, 'index'])->name('paiements.index');
